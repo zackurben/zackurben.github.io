@@ -11,7 +11,8 @@ html {
   color: #222;
   font-size: 1em;
   line-height: 1.4;
-  height: 100%; }
+  height: 100%;
+}
 
 /*
  * Remove text-shadow in selection highlight:
@@ -22,11 +23,13 @@ html {
  */
 ::-moz-selection {
   background: #b3d4fc;
-  text-shadow: none; }
+  text-shadow: none;
+}
 
 ::selection {
   background: #b3d4fc;
-  text-shadow: none; }
+  text-shadow: none;
+}
 
 /*
  * A better looking default horizontal rule
@@ -37,7 +40,8 @@ hr {
   border: 0;
   border-top: 1px solid #ccc;
   margin: 1em 0;
-  padding: 0; }
+  padding: 0;
+}
 
 /*
  * Remove the gap between audio, canvas, iframes,
@@ -50,7 +54,8 @@ iframe,
 img,
 svg,
 video {
-  vertical-align: middle; }
+  vertical-align: middle;
+}
 
 /*
  * Remove default fieldset styles.
@@ -58,36 +63,102 @@ video {
 fieldset {
   border: 0;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 /*
  * Allow only vertical resizing of textareas.
  */
 textarea {
-  resize: vertical; }
+  resize: vertical;
+}
 
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
 html {
   @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
-  font-color: #1d1d1d;
+  color: #1d1d1d;
   font-size: 24px;
   font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
+  font-weight: 300 !important;
   height: 100%;
   background: url("../img/dallas.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover; }
+  background-size: cover;
+}
+
+nav {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  height: auto;
+  background-color: #1bbc9b;
+  text-align: right !important;
+  padding: 25px;
+}
+nav a {
+  padding-right: 50px;
+  color: #1d1d1d;
+  text-decoration: none;
+}
+
+.header {
+  height: 100vh;
+}
+
+h1, h2, h3 {
+  font-weight: 300 !important;
+}
+
+h1 {
+  color: #1bbc9b;
+  font-size: 96px;
+}
+
+h2 {
+  color: #1bbc9b;
+  font-size: 48px;
+}
+
+h3 {
+  color: #1d1d1d;
+  font-size: 36px;
+}
+
+a {
+  color: #1bbc9b;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}
+
+.float-left {
+  float: left !important;
+}
+
+.float-right {
+  float: right !important;
+}
 
 .row {
   width: 100%;
   max-width: 1140px;
   min-width: 755px;
   margin: 0 auto;
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 [class*='col-'] {
   float: left;
@@ -95,67 +166,88 @@ html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  border: 1px black solid; }
+  border: 1px black solid;
+}
 
 .col-10 {
-  width: 100%; }
+  width: 100%;
+}
 
 .col-9 {
-  width: 90%; }
+  width: 90%;
+}
 
 .col-8 {
-  width: 80%; }
+  width: 80%;
+}
 
 .col-7 {
-  width: 70%; }
+  width: 70%;
+}
 
 .col-6 {
-  width: 60%; }
+  width: 60%;
+}
 
 .col-5 {
-  width: 50%; }
+  width: 50%;
+}
 
 .col-4 {
-  width: 40%; }
+  width: 40%;
+}
 
 .col-3 {
-  width: 30%; }
+  width: 30%;
+}
 
 .col-2 {
-  width: 20%; }
+  width: 20%;
+}
 
 .col-1 {
-  width: 10%; }
+  width: 10%;
+}
 
 .off-10 {
-  margin-left: 100%; }
+  margin-left: 100%;
+}
 
 .off-9 {
-  margin-left: 90%; }
+  margin-left: 90%;
+}
 
 .off-8 {
-  margin-left: 80%; }
+  margin-left: 80%;
+}
 
 .off-7 {
-  margin-left: 70%; }
+  margin-left: 70%;
+}
 
 .off-6 {
-  margin-left: 60%; }
+  margin-left: 60%;
+}
 
 .off-5 {
-  margin-left: 50%; }
+  margin-left: 50%;
+}
 
 .off-4 {
-  margin-left: 40%; }
+  margin-left: 40%;
+}
 
 .off-3 {
-  margin-left: 30%; }
+  margin-left: 30%;
+}
 
 .off-2 {
-  margin-left: 20%; }
+  margin-left: 20%;
+}
 
 .off-1 {
-  margin-left: 10%; }
+  margin-left: 10%;
+}
 
 /* ==========================================================================
    Helper classes
@@ -166,7 +258,8 @@ html {
  */
 .hidden {
   display: none !important;
-  visibility: hidden; }
+  visibility: hidden;
+}
 
 /*
  * Hide only visually, but have it available for screen readers:
@@ -180,7 +273,8 @@ html {
   overflow: hidden;
   padding: 0;
   position: absolute;
-  width: 1px; }
+  width: 1px;
+}
 
 /*
  * Extends the .visuallyhidden class to allow the element
@@ -194,13 +288,15 @@ html {
   margin: 0;
   overflow: visible;
   position: static;
-  width: auto; }
+  width: auto;
+}
 
 /*
  * Hide visually and from screen readers, but maintain layout
  */
 .invisible {
-  visibility: hidden; }
+  visibility: hidden;
+}
 
 /*
  * Clearfix: contain floats
@@ -218,10 +314,12 @@ html {
   content: " ";
   /* 1 */
   display: table;
-  /* 2 */ }
+  /* 2 */
+}
 
 .clearfix:after {
-  clear: both; }
+  clear: both;
+}
 
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
@@ -229,9 +327,11 @@ html {
    Modify as content requires.
    ========================================================================== */
 @media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */ }
+  /* Style adjustments for viewports that meet the condition */
+}
 @media print, (-o-min-device-pixel-ratio: 5 / 4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */ }
+  /* Style adjustments for high resolution devices */
+}
 /* ==========================================================================
    Print styles.
    Inlined to avoid the additional HTTP request:
@@ -246,17 +346,21 @@ html {
     /* Black prints faster:
            http://www.sanbeiji.com/archives/953 */
     box-shadow: none !important;
-    text-shadow: none !important; }
+    text-shadow: none !important;
+  }
 
   a,
   a:visited {
-    text-decoration: underline; }
+    text-decoration: underline;
+  }
 
   a[href]:after {
-    content: " (" attr(href) ")"; }
+    content: " (" attr(href) ")";
+  }
 
   abbr[title]:after {
-    content: " (" attr(title) ")"; }
+    content: " (" attr(title) ")";
+  }
 
   /*
    * Don't show links that are fragment identifiers,
@@ -264,35 +368,43 @@ html {
    */
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
-    content: ""; }
+    content: "";
+  }
 
   pre,
   blockquote {
     border: 1px solid #999;
-    page-break-inside: avoid; }
+    page-break-inside: avoid;
+  }
 
   /*
    * Printing Tables:
    * http://css-discuss.incutio.com/wiki/Printing_Tables
    */
   thead {
-    display: table-header-group; }
+    display: table-header-group;
+  }
 
   tr,
   img {
-    page-break-inside: avoid; }
+    page-break-inside: avoid;
+  }
 
   img {
-    max-width: 100% !important; }
+    max-width: 100% !important;
+  }
 
   p,
   h2,
   h3 {
     orphans: 3;
-    widows: 3; }
+    widows: 3;
+  }
 
   h2,
   h3 {
-    page-break-after: avoid; } }
+    page-break-after: avoid;
+  }
+}
 
 /*# sourceMappingURL=main.css.map */
