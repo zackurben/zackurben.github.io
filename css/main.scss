@@ -139,6 +139,19 @@ nav {
   height: 100vh;
 }
 
+.content {
+  padding: 100px 0 100px 0;
+  width: 100%;
+
+  &.light {
+    background-color: $site-primary-color;
+  }
+  &.dark {
+    background-color: $site-secondary-color;
+  }
+}
+
+// Font settings.
 h1, h2, h3 {
   font-weight: 300 !important;
 }
@@ -149,7 +162,7 @@ h1 {
 }
 
 h2 {
-  color: $text-secondary-color;
+  color: $text-primary-color;
   font-size: $text-subhead-size;
 }
 
