@@ -109,7 +109,6 @@ html {
   font-size: $text-body-size;
   font-family: 'Open Sans', sans-serif;
   font-weight: 300 !important;
-  height: 100%;
 
   background: url('../img/dallas.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -136,38 +135,48 @@ nav {
 }
 
 .header {
-  height: 100vh;
+  height: 60vh;
+  padding: 40vh 0 0 0;
+
+  h1 {
+    margin: 0;
+
+    color: $text-secondary-color;
+    font-size: $text-head-size;
+    font-weight: 300 !important;
+  }
+
+  h2 {
+    margin: 0;
+    padding: 10vh 0 0 0;
+
+    color: $text-secondary-color;
+    font-size: $text-subhead-size;
+    font-weight: 300 !important;
+  }
 }
 
 .content {
   padding: 100px 0 100px 0;
   width: 100%;
+  background-color: $site-primary-color;
 
-  &.light {
-    background-color: $site-primary-color;
-  }
-  &.dark {
+  &:nth-child(odd) {
     background-color: $site-secondary-color;
   }
 }
 
-// Font settings.
-h1, h2, h3 {
+h2, h3 {
+  margin: 0;
+  color: $text-primary-color;
   font-weight: 300 !important;
 }
 
-h1 {
-  color: $text-secondary-color;
-  font-size: $text-head-size;
-}
-
 h2 {
-  color: $text-primary-color;
   font-size: $text-subhead-size;
 }
 
 h3 {
-  color: $text-primary-color;
   font-size: $text-subsubhead-size;
 }
 
