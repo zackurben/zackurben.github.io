@@ -1,0 +1,11 @@
+# Site settings
+title: Zack Urben
+email: zackurben@gmail.com
+description: The personal website for Zack Urben. A place where developers can REST and learn codefu.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://www.zackurben.com" # the base hostname & protocol for your site
+twitter_username: zackurben
+github_username:  zackurben
+
+# Build settings
+markdown: kramdown
