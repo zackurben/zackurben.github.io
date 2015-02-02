@@ -54,6 +54,14 @@ nav {
   }
 }
 
+i {
+  color: $text-primary-color;
+
+  &:hover {
+    color: $text-secondary-color;
+  }
+}
+
 .content {
   padding: 100px 0 100px 0;
   width: 100%;
