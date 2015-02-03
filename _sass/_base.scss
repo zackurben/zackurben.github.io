@@ -32,9 +32,16 @@ nav {
   }
 }
 
+img {
+  border: $site-accent-color;
+  border-width: 7px;
+  border-radius: 21px;
+  border-style: solid;
+}
+
 .header {
-  height: 60vh;
-  padding: 40vh 0 0 0;
+  height: 70vh;
+  padding: 30vh 0 0 0;
 
   h1 {
     margin: 0;
