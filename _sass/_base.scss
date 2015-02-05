@@ -32,7 +32,7 @@ nav {
   }
 }
 
-img {
+img.profile {
   border: $site-accent-color;
   border-width: 7px;
   border-radius: 21px;
@@ -45,19 +45,41 @@ img {
 
   h1 {
     margin: 0;
-
     color: $text-secondary-color;
-    font-size: $text-head-size;
     font-weight: 300 !important;
+    font-size: $text-head-size;
+
+    @media only screen and (min-width: 1280px) {
+      font-size: $text-head-size;
+    }
+
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+      font-size: $text-head-size;
+    }
+
+    @media only screen and (min-device-width : 480px) and (max-device-width : 768px) {
+      font-size: $text-head-size;
+    }
   }
 
   h2 {
     margin: 0;
     padding: 10vh 0 0 0;
-
     color: $text-secondary-color;
-    font-size: $text-subhead-size;
     font-weight: 300 !important;
+    font-size: $text-subhead-size;
+
+    @media only screen and (min-width: 1280px) {
+      font-size: $text-subhead-size;
+    }
+
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+      font-size: $text-subhead-size;
+    }
+
+    @media only screen and (min-device-width : 480px) and (max-device-width : 768px) {
+      font-size: $text-subhead-size;
+    }
   }
 }
 
@@ -220,4 +242,16 @@ a {
 
 .off-1 {
   margin-left: 10%;
+}
+
+@media only screen and (max-width: 480px) {
+  .col-10, .col-9, .col-8, .col-7, .col-6,
+  .col-5, .col-4, .col-3, .col-2, .col-1{
+    width: 100%;
+  }
+
+  .off-10, .off-9, .off-8, .off-7, .off-6,
+  .off-5, .off-4, .off-3, .off-2, .off-1{
+    margin-left: 0%;
+  }
 }
