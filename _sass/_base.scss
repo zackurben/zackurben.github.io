@@ -1,18 +1,85 @@
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
+/**
+ * Custom styles.
+ */
 html {
   @import url('http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800');
   color: $text-primary-color;
   font-size: $text-body-size;
   font-family: 'Open Sans', sans-serif;
   font-weight: 300 !important;
+  min-width: 480px;
   background: url('../img/dallas.jpg') no-repeat center center fixed;
 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  color: $text-primary-color;
+  font-weight: 300 !important;
+}
+
+h1 {
+  font-size: $text-head-size;
+
+  @media only screen and (min-width: 1280px) {
+    font-size: $text-head-size;
+  }
+
+  @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    font-size: $text-head-size;
+  }
+
+  @media only screen and (min-device-width : 480px) and (max-device-width : 768px) {
+    font-size: $text-head-size;
+  }
+}
+
+h2 {
+  font-size: $text-subhead-size;
+
+  @media only screen and (min-width: 1280px) {
+    font-size: $text-subhead-size;
+  }
+
+  @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    font-size: $text-subhead-size;
+  }
+
+  @media only screen and (min-device-width : 480px) and (max-device-width : 768px) {
+    font-size: $text-subhead-size;
+  }
+}
+
+h3 {
+  font-size: $text-subsubhead-size;
+
+  @media only screen and (min-width: 1280px) {
+    font-size: $text-subhead-size;
+  }
+
+  @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    font-size: $text-subhead-size;
+  }
+
+  @media only screen and (min-device-width : 480px) and (max-device-width : 768px) {
+    font-size: $text-subhead-size;
+  }
+}
+
+i {
+  color: $text-primary-color;
+
+  &:hover {
+    color: $text-secondary-color;
+  }
+}
+
+a {
+  color: $site-accent-color;
 }
 
 nav {
@@ -23,7 +90,7 @@ nav {
   background-color: $site-accent-color;
   text-align: right !important;
 
-  padding: 25px;
+  padding: 30px;
 
   a {
     padding-right: 50px;
@@ -32,61 +99,12 @@ nav {
   }
 }
 
-img.profile {
-  border: $site-accent-color;
-  border-width: 7px;
-  border-radius: 21px;
-  border-style: solid;
-}
-
 .header {
-  height: 70vh;
-  padding: 30vh 0 0 0;
+  height: 80vh;
+  padding: 20vh 0 0 0;
 
-  h1 {
-    margin: 0;
-    color: $text-secondary-color;
-    font-weight: 300 !important;
-    font-size: $text-head-size;
-
-    @media only screen and (min-width: 1280px) {
-      font-size: $text-head-size;
-    }
-
-    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
-      font-size: $text-head-size;
-    }
-
-    @media only screen and (min-device-width : 480px) and (max-device-width : 768px) {
-      font-size: $text-head-size;
-    }
-  }
-
-  h2 {
-    margin: 0;
+  h1, h2, h3 {
     padding: 10vh 0 0 0;
-    color: $text-secondary-color;
-    font-weight: 300 !important;
-    font-size: $text-subhead-size;
-
-    @media only screen and (min-width: 1280px) {
-      font-size: $text-subhead-size;
-    }
-
-    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
-      font-size: $text-subhead-size;
-    }
-
-    @media only screen and (min-device-width : 480px) and (max-device-width : 768px) {
-      font-size: $text-subhead-size;
-    }
-  }
-}
-
-i {
-  color: $text-primary-color;
-
-  &:hover {
     color: $text-secondary-color;
   }
 }
@@ -99,24 +117,23 @@ i {
   &:nth-child(odd) {
     background-color: $site-secondary-color;
   }
+
+  @media only screen and (min-device-width : 480px) and (max-device-width : 768px) {
+    padding: 0;
+  }
 }
 
-h2, h3 {
-  margin: 0;
-  color: $text-primary-color;
-  font-weight: 300 !important;
-}
+.profile {
+  border: $site-accent-color;
+  border-width: 7px;
+  border-radius: 21px;
+  border-style: solid;
 
-h2 {
-  font-size: $text-subhead-size;
-}
+  max-width: 250px !important;
+  width: 100% !important;
 
-h3 {
-  font-size: $text-subsubhead-size;
-}
-
-a {
-  color: $site-accent-color;
+  max-height: 250px !important;
+  height: 100% !important;
 }
 
 // Alignment stuff.
@@ -140,7 +157,9 @@ a {
   float: right !important;
 }
 
-// Simple css content grid.
+/**
+ * Simple content grid.
+ */
 .row {
   width: 100%;
   max-width: $max-width;
@@ -161,7 +180,6 @@ a {
   border: 1px black solid;
 }
 
-// Column rules.
 .col-10 {
   width: 100%;
 }
@@ -202,8 +220,6 @@ a {
   width: 10%;
 }
 
-
-// Offset rules.
 .off-10 {
   margin-left: 100%;
 }
@@ -244,6 +260,9 @@ a {
   margin-left: 10%;
 }
 
+/**
+ * Grid layout for small screens.
+ */
 @media only screen and (max-width: 480px) {
   .col-10, .col-9, .col-8, .col-7, .col-6,
   .col-5, .col-4, .col-3, .col-2, .col-1{
