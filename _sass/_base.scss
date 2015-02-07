@@ -20,61 +20,73 @@ h1, h2, h3 {
   color: $text-primary-color;
   font-weight: 300 !important;
 
-  @media only screen and (max-width : 480px) {
+  @include micro-screen {
     padding: 0 20px 0 20px;
   }
 }
 
 h1 {
-  @media only screen and (min-width : 480px) {
+  @include micro-screen {
+    font-size: round($text-head-size * 0.5);
+  }
+
+  @include xs-screen {
     font-size: round($text-head-size * 0.7);
   }
 
-  @media only screen and (min-width : 768px) {
+  @include s-screen {
     font-size: round($text-head-size * 0.8);
   }
 
-  @media only screen and (min-width: 1024px) {
+  @include m-screen {
     font-size: round($text-head-size * 0.9);
   }
 
-  @media only screen and (min-width: 1280px) {
+  @include l-screen {
     font-size: $text-head-size;
   }
 }
 
 h2 {
-  @media only screen and (min-width : 480px) {
+  @include micro-screen {
+    font-size: round($text-subhead-size * 0.5);
+  }
+
+  @include xs-screen {
     font-size: round($text-subhead-size * 0.7);
   }
 
-  @media only screen and (min-width : 768px) {
+  @include s-screen {
     font-size: round($text-subhead-size * 0.8);
   }
 
-  @media only screen and (min-width: 1024px) {
+  @include m-screen {
     font-size: round($text-subhead-size * 0.9);
   }
 
-  @media only screen and (min-width: 1280px) {
+  @include l-screen {
     font-size: $text-subhead-size;
   }
 }
 
 h3 {
-  @media only screen and (min-width : 480px) {
+  @include micro-screen {
+    font-size: round($text-subsubhead-size * 0.5);
+  }
+
+  @include xs-screen {
     font-size: round($text-subsubhead-size * 0.7);
   }
 
-  @media only screen and (min-width : 768px) {
+  @include s-screen {
     font-size: round($text-subsubhead-size * 0.8);
   }
 
-  @media only screen and (min-width: 1024px) {
+  @include m-screen {
     font-size: round($text-subsubhead-size * 0.9);
   }
 
-  @media only screen and (min-width: 1280px) {
+  @include l-screen {
     font-size: $text-subsubhead-size;
   }
 }
@@ -99,19 +111,23 @@ nav {
   background-color: $site-accent-color;
   text-align: right !important;
 
-  @media only screen and (min-width : 480px) {
+  @include micro-screen {
+    padding: round($nav-padding * 0.5);
+  }
+
+  @include xs-screen {
     padding: round($nav-padding * 0.7);
   }
 
-  @media only screen and (min-width : 768px) {
+  @include s-screen {
     padding: round($nav-padding * 0.8);
   }
 
-  @media only screen and (min-width: 1024px) {
+  @include m-screen {
     padding: round($nav-padding * 0.9);
   }
 
-  @media only screen and (min-width: 1280px) {
+  @include l-screen {
     padding: $nav-padding;
   }
 
@@ -119,22 +135,27 @@ nav {
     color: $text-primary-color;
     text-decoration: none;
 
-    @media only screen and (min-width : 480px) {
+    @include micro-screen {
+      padding-right: round($nav-spacing * 0.5);
+      font-size: round($text-body-size * 0.5);
+    }
+
+    @include xs-screen {
       padding-right: round($nav-spacing * 0.7);
       font-size: round($text-body-size * 0.7);
     }
 
-    @media only screen and (min-width : 768px) {
+    @include s-screen {
       padding-right: round($nav-spacing * 0.8);
       font-size: round($text-body-size * 0.8);
     }
 
-    @media only screen and (min-width: 1024px) {
+    @include m-screen {
       padding-right: round($nav-spacing * 0.9);
       font-size: round($text-body-size * 0.9);
     }
 
-    @media only screen and (min-width: 1280px) {
+    @include l-screen {
       padding-right: $nav-spacing;
       font-size: $text-body-size;
     }
@@ -152,6 +173,37 @@ nav {
   }
 }
 
+.scroll {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  @include micro-screen {
+    height: round($scroll-height * 0.6);
+    width: round($scroll-width * 0.6);
+  }
+
+  @include xs-screen {
+    height: round($scroll-height * 0.7);
+    width: round($scroll-width * 0.7);
+  }
+
+  @include s-screen {
+    height: round($scroll-height * 0.8);
+    width: round($scroll-width * 0.8);
+  }
+
+  @include m-screen {
+    height: round($scroll-height * 0.9);
+    width: round($scroll-width * 0.9);
+  }
+
+  @include l-screen {
+    height: $scroll-height;
+    width: $scroll-width;
+  }
+}
+
 .content {
   padding: 80px 0 80px 0;
   width: 100%;
@@ -161,19 +213,23 @@ nav {
     background-color: $site-secondary-color;
   }
 
-  @media only screen and (max-width : 480px) {
+  @include micro-screen {
+    padding: round($content-padding * 0.15) 0 round($content-padding * 0.15) 0;
+  }
+
+  @include xs-screen {
     padding: round($content-padding * 0.25) 0 round($content-padding * 0.25) 0;
   }
 
-  @media only screen and (min-width : 768px) {
+  @include s-screen {
     padding: round($content-padding * 0.5) 0 round($content-padding * 0.5) 0;
   }
 
-  @media only screen and (min-width: 1024px) {
+  @include m-screen {
     padding: round($content-padding * 0.75) 0 round($content-padding * 0.75) 0;
   }
 
-  @media only screen and (min-width: 1280px) {
+  @include l-screen {
     padding: $content-padding 0 $content-padding 0;
 
   }
@@ -318,7 +374,7 @@ nav {
 /**
  * Grid layout for small screens.
  */
-@media only screen and (max-width: 480px) {
+@include micro-screen {
   .col-10, .col-9, .col-8, .col-7, .col-6,
   .col-5, .col-4, .col-3, .col-2, .col-1 {
     width: 100%;

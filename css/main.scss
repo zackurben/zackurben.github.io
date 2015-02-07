@@ -21,11 +21,59 @@ $text-body-size: 24px;
 $nav-padding: 20px;
 $nav-spacing: 50px;
 $content-padding: 100px;
+// our scroll img dimensions
+$scroll-height: 119px;
+$scroll-width: 135px;
 
 // Grid settings.
 $max-width: 1140px;
 $min-width: 755px;
 $col-padding: 25px;
+
+/*
+ * Sass mixins to consolidate media query definitions.
+ */
+// Micro small screens.
+@mixin micro-screen {
+  @media only screen and (max-width : 480px) {
+    @content;
+  }
+}
+
+// Extra small screens.
+@mixin xs-screen {
+  @media only screen and (min-width : 480px) {
+    @content;
+  }
+}
+
+// Small screens.
+@mixin s-screen {
+  @media only screen and (min-width : 768px) {
+    @content;
+  }
+}
+
+// Medium screens.
+@mixin m-screen {
+  @media only screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+// Large screens.
+@mixin l-screen {
+  @media only screen and (min-width: 1280px) {
+    @content;
+  }
+}
+
+// Extra large screens.
+@mixin xl-screen {
+  @media only screen and (min-width: 1280px) {
+    @content;
+  }
+}
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import "h5bp-pre", "base", "h5bp-post";
