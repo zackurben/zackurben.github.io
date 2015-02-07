@@ -129,11 +129,10 @@ nav {
   border-radius: 21px;
   border-style: solid;
 
-  max-width: 250px !important;
   width: 100% !important;
-
-  max-height: 250px !important;
   height: 100% !important;
+
+  box-sizing: border-box;
 }
 
 // Alignment stuff.
