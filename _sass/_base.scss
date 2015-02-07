@@ -29,11 +29,15 @@ h1 {
     font-size: $text-head-size;
   }
 
-  @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+  @media only screen and (min-width: 1024px) {
     font-size: $text-head-size;
   }
 
-  @media only screen and (min-device-width : 480px) and (max-device-width : 768px) {
+  @media only screen and (min-width : 768px) {
+    font-size: $text-head-size;
+  }
+
+  @media only screen and (min-width : 480px) {
     font-size: $text-head-size;
   }
 }
@@ -45,11 +49,15 @@ h2 {
     font-size: $text-subhead-size;
   }
 
-  @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+  @media only screen and (min-width: 1024px) {
     font-size: $text-subhead-size;
   }
 
-  @media only screen and (min-device-width : 480px) and (max-device-width : 768px) {
+  @media only screen and (min-width : 768px) {
+    font-size: $text-subhead-size;
+  }
+
+  @media only screen and (min-width : 480px) {
     font-size: $text-subhead-size;
   }
 }
@@ -58,15 +66,19 @@ h3 {
   font-size: $text-subsubhead-size;
 
   @media only screen and (min-width: 1280px) {
-    font-size: $text-subhead-size;
+    font-size: $text-subsubhead-size;
   }
 
-  @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
-    font-size: $text-subhead-size;
+  @media only screen and (min-width: 1024px) {
+    font-size: $text-subsubhead-size;
   }
 
-  @media only screen and (min-device-width : 480px) and (max-device-width : 768px) {
-    font-size: $text-subhead-size;
+  @media only screen and (min-width : 768px) {
+    font-size: $text-subsubhead-size;
+  }
+
+  @media only screen and (min-width : 480px) {
+    font-size: $text-subsubhead-size;
   }
 }
 
@@ -118,7 +130,7 @@ nav {
     background-color: $site-secondary-color;
   }
 
-  @media only screen and (min-device-width : 480px) and (max-device-width : 768px) {
+  @media only screen and (min-width : 480px) {
     padding: 0;
   }
 }
