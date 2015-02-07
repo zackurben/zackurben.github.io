@@ -7,7 +7,6 @@ html {
   font-size: $text-body-size;
   font-family: 'Open Sans', sans-serif;
   font-weight: 300 !important;
-  min-width: 480px;
   background: url('../img/dallas.jpg') no-repeat center center fixed;
 
   -webkit-background-size: cover;
@@ -20,64 +19,62 @@ h1, h2, h3 {
   margin: 0;
   color: $text-primary-color;
   font-weight: 300 !important;
+
+  @media only screen and (max-width : 480px) {
+    padding: 0 20px 0 20px;
+  }
 }
 
 h1 {
-  font-size: $text-head-size;
-
-  @media only screen and (min-width: 1280px) {
-    font-size: $text-head-size;
-  }
-
-  @media only screen and (min-width: 1024px) {
-    font-size: $text-head-size;
+  @media only screen and (min-width : 480px) {
+    font-size: round($text-head-size * 0.7);
   }
 
   @media only screen and (min-width : 768px) {
-    font-size: $text-head-size;
+    font-size: round($text-head-size * 0.8);
   }
 
-  @media only screen and (min-width : 480px) {
+  @media only screen and (min-width: 1024px) {
+    font-size: round($text-head-size * 0.9);
+  }
+
+  @media only screen and (min-width: 1280px) {
     font-size: $text-head-size;
   }
 }
 
 h2 {
-  font-size: $text-subhead-size;
-
-  @media only screen and (min-width: 1280px) {
-    font-size: $text-subhead-size;
-  }
-
-  @media only screen and (min-width: 1024px) {
-    font-size: $text-subhead-size;
+  @media only screen and (min-width : 480px) {
+    font-size: round($text-subhead-size * 0.7);
   }
 
   @media only screen and (min-width : 768px) {
-    font-size: $text-subhead-size;
+    font-size: round($text-subhead-size * 0.8);
   }
 
-  @media only screen and (min-width : 480px) {
+  @media only screen and (min-width: 1024px) {
+    font-size: round($text-subhead-size * 0.9);
+  }
+
+  @media only screen and (min-width: 1280px) {
     font-size: $text-subhead-size;
   }
 }
 
 h3 {
-  font-size: $text-subsubhead-size;
-
-  @media only screen and (min-width: 1280px) {
-    font-size: $text-subsubhead-size;
-  }
-
-  @media only screen and (min-width: 1024px) {
-    font-size: $text-subsubhead-size;
+  @media only screen and (min-width : 480px) {
+    font-size: round($text-subsubhead-size * 0.7);
   }
 
   @media only screen and (min-width : 768px) {
-    font-size: $text-subsubhead-size;
+    font-size: round($text-subsubhead-size * 0.8);
   }
 
-  @media only screen and (min-width : 480px) {
+  @media only screen and (min-width: 1024px) {
+    font-size: round($text-subsubhead-size * 0.9);
+  }
+
+  @media only screen and (min-width: 1280px) {
     font-size: $text-subsubhead-size;
   }
 }
@@ -102,18 +99,52 @@ nav {
   background-color: $site-accent-color;
   text-align: right !important;
 
-  padding: 30px;
+  @media only screen and (min-width : 480px) {
+    padding: round($nav-padding * 0.7);
+  }
+
+  @media only screen and (min-width : 768px) {
+    padding: round($nav-padding * 0.8);
+  }
+
+  @media only screen and (min-width: 1024px) {
+    padding: round($nav-padding * 0.9);
+  }
+
+  @media only screen and (min-width: 1280px) {
+    padding: $nav-padding;
+  }
 
   a {
-    padding-right: 50px;
     color: $text-primary-color;
     text-decoration: none;
+
+    @media only screen and (min-width : 480px) {
+      padding-right: round($nav-spacing * 0.7);
+      font-size: round($text-body-size * 0.7);
+    }
+
+    @media only screen and (min-width : 768px) {
+      padding-right: round($nav-spacing * 0.8);
+      font-size: round($text-body-size * 0.8);
+    }
+
+    @media only screen and (min-width: 1024px) {
+      padding-right: round($nav-spacing * 0.9);
+      font-size: round($text-body-size * 0.9);
+    }
+
+    @media only screen and (min-width: 1280px) {
+      padding-right: $nav-spacing;
+      font-size: $text-body-size;
+    }
   }
 }
 
 .header {
   height: 80vh;
   padding: 20vh 0 0 0;
+  overflow: hidden;
 
   h1, h2, h3 {
     padding: 10vh 0 0 0;
@@ -122,7 +153,7 @@ nav {
 }
 
 .content {
-  padding: 100px 0 100px 0;
+  padding: 80px 0 80px 0;
   width: 100%;
   background-color: $site-primary-color;
 
@@ -130,8 +161,21 @@ nav {
     background-color: $site-secondary-color;
   }
 
-  @media only screen and (min-width : 480px) {
-    padding: 0;
+  @media only screen and (max-width : 480px) {
+    padding: round($content-padding * 0.25) 0 round($content-padding * 0.25) 0;
+  }
+
+  @media only screen and (min-width : 768px) {
+    padding: round($content-padding * 0.5) 0 round($content-padding * 0.5) 0;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    padding: round($content-padding * 0.75) 0 round($content-padding * 0.75) 0;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    padding: $content-padding 0 $content-padding 0;
+
   }
 }
 
@@ -141,9 +185,11 @@ nav {
   border-radius: 21px;
   border-style: solid;
 
-  width: 100% !important;
-  height: 100% !important;
+  width: 100%;
+  height: 100%;
 
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -173,8 +219,6 @@ nav {
  */
 .row {
   width: 100%;
-  max-width: $max-width;
-  min-width: $min-width;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -276,12 +320,12 @@ nav {
  */
 @media only screen and (max-width: 480px) {
   .col-10, .col-9, .col-8, .col-7, .col-6,
-  .col-5, .col-4, .col-3, .col-2, .col-1{
+  .col-5, .col-4, .col-3, .col-2, .col-1 {
     width: 100%;
   }
 
   .off-10, .off-9, .off-8, .off-7, .off-6,
-  .off-5, .off-4, .off-3, .off-2, .off-1{
+  .off-5, .off-4, .off-3, .off-2, .off-1 {
     margin-left: 0%;
   }
 }
