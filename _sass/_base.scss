@@ -13,6 +13,8 @@ html {
   -o-background-size: cover;
   background-size: cover;
 
+  overflow-x: hidden;
+
   @include micro-screen {
     font-size: round($text-body-size * 0.6);
   }
@@ -285,6 +287,59 @@ nav {
   }
 }
 
+.scroll-reverse {
+  width: 100%;
+
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+
+  img {
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+
+    display: block;
+    margin: auto;
+    padding-bottom: 20px;
+
+    @include micro-screen {
+      height: round($scroll-height * 0.6);
+      width: round($scroll-width * 0.6);
+    }
+
+    @include xs-screen {
+      height: round($scroll-height * 0.7);
+      width: round($scroll-width * 0.7);
+    }
+
+    @include s-screen {
+      height: round($scroll-height * 0.8);
+      width: round($scroll-width * 0.8);
+    }
+
+    @include m-screen {
+      height: round($scroll-height * 0.9);
+      width: round($scroll-width * 0.9);
+    }
+
+    @include l-screen {
+      height: round($scroll-height);
+      width: round($scroll-width);
+    }
+  }
+}
+
 .content {
   padding: 80px 0 80px 0;
   width: 100%;
@@ -327,6 +382,12 @@ nav {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+#skill-chart {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 // Alignment stuff.
