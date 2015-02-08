@@ -178,29 +178,36 @@ nav {
   bottom: 0;
   width: 100%;
 
-  @include micro-screen {
-    height: round($scroll-height * 0.6);
-    width: round($scroll-width * 0.6);
-  }
+  img {
+    display: block;
+    position: relative;
+    margin: auto;
+    padding-bottom: 20px;
 
-  @include xs-screen {
-    height: round($scroll-height * 0.7);
-    width: round($scroll-width * 0.7);
-  }
+    @include micro-screen {
+      height: round($scroll-height * 0.6);
+      width: round($scroll-width * 0.6);
+    }
 
-  @include s-screen {
-    height: round($scroll-height * 0.8);
-    width: round($scroll-width * 0.8);
-  }
+    @include xs-screen {
+      height: round($scroll-height * 0.7);
+      width: round($scroll-width * 0.7);
+    }
 
-  @include m-screen {
-    height: round($scroll-height * 0.9);
-    width: round($scroll-width * 0.9);
-  }
+    @include s-screen {
+      height: round($scroll-height * 0.8);
+      width: round($scroll-width * 0.8);
+    }
 
-  @include l-screen {
-    height: $scroll-height;
-    width: $scroll-width;
+    @include m-screen {
+      height: round($scroll-height * 0.9);
+      width: round($scroll-width * 0.9);
+    }
+
+    @include l-screen {
+      height: $scroll-height;
+      width: $scroll-width;
+    }
   }
 }
 
