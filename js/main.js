@@ -1,22 +1,22 @@
 window.onload = function() {
     // Scroll to the about section on button click.
     $('.scroll, #about-nav').click(function() {
-        $('html, body').animate({scrollTop: $('#about').offset().top}, 'slow');
+        $('body').animate({scrollTop: $('#about').offset().top}, 'slow');
     });
 
     // Scroll to the projects section on button click.
     $('#projects-nav').click(function() {
-        $('html, body').animate({scrollTop: $('#projects').offset().top}, 'slow');
+        $('body').animate({scrollTop: $('#projects').offset().top}, 'slow');
     });
 
     // Scroll to the contacts section on button click.
     $('#contact-nav').click(function() {
-        $('html, body').animate({scrollTop: $('#contact').offset().top}, 'slow');
+        $('body').animate({scrollTop: $('#contact').offset().top}, 'slow');
     });
 
     // Scroll to the top of the page on reverse button click.
     $('footer div.scroll-reverse').click(function() {
-        $('html, body').animate({ scrollTop: 0 }, 'slow');
+        $('body').animate({ scrollTop: 0 }, 'slow');
     });
 
     // Add out chart.js skill graph.

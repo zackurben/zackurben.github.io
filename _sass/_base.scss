@@ -239,8 +239,6 @@ nav {
 }
 
 .scroll {
-  position: absolute;
-  bottom: 0;
   width: 100%;
 
   -webkit-animation-duration: 3s;
@@ -251,15 +249,13 @@ nav {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   -webkit-animation-iteration-count: infinite;
-
   -webkit-animation-name: pulse;
   animation-name: pulse;
 
   img {
     display: block;
-    position: relative;
     margin: auto;
-    padding-bottom: 20px;
+    padding-bottom: 5%;
 
     @include micro-screen {
       height: round($scroll-height * 0.6);
@@ -286,57 +282,23 @@ nav {
       width: round($scroll-width);
     }
   }
-}
 
-.scroll-reverse {
-  width: 100%;
+  &.regular {
+    position: absolute;
+    bottom: 0;
 
-  -webkit-animation-duration: 3s;
-  animation-duration: 3s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  -webkit-animation-iteration-count: infinite;
-
-  -webkit-animation-name: pulse;
-  animation-name: pulse;
-
-  img {
-    transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-    -moz-transform: rotate(180deg);
-    -webkit-transform: rotate(180deg);
-    -o-transform: rotate(180deg);
-
-    display: block;
-    margin: auto;
-    padding-bottom: 20px;
-
-    @include micro-screen {
-      height: round($scroll-height * 0.6);
-      width: round($scroll-width * 0.6);
+    img {
+      position: relative;
     }
+  }
 
-    @include xs-screen {
-      height: round($scroll-height * 0.7);
-      width: round($scroll-width * 0.7);
-    }
-
-    @include s-screen {
-      height: round($scroll-height * 0.8);
-      width: round($scroll-width * 0.8);
-    }
-
-    @include m-screen {
-      height: round($scroll-height * 0.9);
-      width: round($scroll-width * 0.9);
-    }
-
-    @include l-screen {
-      height: round($scroll-height);
-      width: round($scroll-width);
+  &.reverse {
+    img {
+      transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -webkit-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
     }
   }
 }
