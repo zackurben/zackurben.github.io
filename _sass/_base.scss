@@ -239,6 +239,7 @@ nav {
 }
 
 .scroll {
+  margin-top: 10vh;
   width: 100%;
 
   -webkit-animation-duration: 3s;
@@ -255,7 +256,6 @@ nav {
   img {
     display: block;
     margin: auto;
-    padding-bottom: 5%;
 
     @include micro-screen {
       height: round($scroll-height * 0.6);
@@ -280,15 +280,6 @@ nav {
     @include l-screen {
       height: round($scroll-height);
       width: round($scroll-width);
-    }
-  }
-
-  &.regular {
-    position: absolute;
-    bottom: 0;
-
-    img {
-      position: relative;
     }
   }
 
