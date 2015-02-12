@@ -10,5 +10,35 @@ twitter_profile: "https://twitter.com/zackurben"
 github_profile: "https://github.com/zackurben"
 linkedin_profile: "https://www.linkedin.com/in/zackurben"
 
+projects:
+  - name: "EZEDIT"
+    client: "General Public"
+    project: "Platform As A Service (PAAS)"
+    team:
+      - name: "Zack Urben"
+        link: "#"
+      - name: "Jon Darling"
+        link: "http://jmdarling.com/"
+      - name: "Rahat Ahmed"
+        link: "http://rahatah.me/d/"
+    link:
+      - label: "GitHub"
+        link: "https://github.com/ezedit/ezedit"
+    tech:
+      - label: "Node.js"
+        link: "http://nodejs.org/"
+      - label: "mongoDB"
+        link: "http://www.mongodb.org/"
+      - label: "Expressjs"
+        link: "http://expressjs.com/"
+      - label: "Backbone.js"
+        link: "http://backbonejs.org/"
+    about: "EZEDIT is a Platform as a Service (PAAS) for web designers to give their clients full control of the
+            digital content on their website. As a designer, you make a website and tag HTML fields with
+            data-attributes that you want the client to have access to edit; after mapping the corresponding
+            fields on the service, the client can login to EZEDIT and manipulate the contents displayed on their site
+            in realtime. On page load, the site generated js file will call the EZEDIT API and display the most recent
+            content on the site. EZEDIT is an open source project under the MIT license."
+
 # Build settings
 markdown: kramdown

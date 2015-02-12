@@ -381,7 +381,24 @@ nav {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 
+  &.thin {
+    padding: 0;
+  }
+
+  &.right {
+    text-align: right;
+  }
+
+  &.left {
+    text-align: left;
+  }
+
+
   @include micro-screen {
+    &.right {
+      text-align: left;
+    }
+
     padding: round($col-padding * 0.5);
   }
 
