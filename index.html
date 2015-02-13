@@ -2,7 +2,7 @@
 layout: default
 ---
 <div class="content" id="about">
-    <div class="row left">
+    <div class="row center">
         <h2>About</h2>
     </div>
     <div class="row">
@@ -30,31 +30,32 @@ layout: default
 </div>
 
 <div class="content" id="projects">
-    <div class="row right">
-        <h2>Projects</h2>
+    <div class="row center">
+    <h2>Projects</h2>
     </div>
 
     {% for project in site.projects %}
     <div class="row">
         <div class="col-5">
-            <h2>{{ project.name }}</h2>
+            <h2 class="thin left">{{ project.name }}</h2>
+
 
             <div class="col-3 thin right">
-                <strong>Client:</strong><br>
+                <strong>Client:</strong>&nbsp;
             </div>
             <div class="col-9 thin left">
                 {{ project.client }}
             </div>
 
             <div class="col-3 thin right">
-                <strong>Project:</strong><br>
+                <strong>Project:</strong>&nbsp;
             </div>
             <div class="col-9 thin left">
                 {{ project.project }}
             </div>
 
             <div class="col-3 thin right">
-                <strong>Team:</strong><br>
+                <strong>Team:</strong>&nbsp;
             </div>
             <div class="col-9 thin left">
                 {% for user in project.team %}
@@ -63,7 +64,7 @@ layout: default
             </div>
 
             <div class="col-3 thin right">
-                <strong>Link:</strong><br>
+                <strong>Link:</strong>&nbsp;
             </div>
             <div class="col-9 thin left">
                 {% for link in project.link %}
@@ -72,7 +73,7 @@ layout: default
             </div>
 
             <div class="col-3 thin right">
-                <strong>Tech:</strong><br>
+                <strong>Tech:</strong>&nbsp;
             </div>
             <div class="col-9 thin left">
                 {% for tech in project.tech %}

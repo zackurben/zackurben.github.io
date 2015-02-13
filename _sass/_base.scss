@@ -381,19 +381,6 @@ nav {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 
-  &.thin {
-    padding: 0;
-  }
-
-  &.right {
-    text-align: right;
-  }
-
-  &.left {
-    text-align: left;
-  }
-
-
   @include micro-screen {
     &.right {
       text-align: left;
@@ -417,9 +404,10 @@ nav {
   @include l-screen {
     padding: round($col-padding);
   }
+}
 
-  // dbg
-  border: 1px black solid;
+.thin {
+  padding: 0;
 }
 
 .col-12 {
