@@ -46,9 +46,9 @@ projects:
       - name: "Zack Urben"
         link: "#"
       - name: "Spencer Fusco"
-        link: "#"
+        link: "www.linkedin.com/pub/spencer-fusco/aa/832/89b/en"
       - name: "Scarlett Hunt"
-        link: "#"
+        link: "https://www.linkedin.com/pub/kendall-hunt/66/843/a22"
       - name: "Grant Cox"
         link: "#"
     link:
@@ -71,6 +71,25 @@ projects:
             processing currently in-place at MemoryScience. I served as the lead developer and created a custom PHP
             wrapper for interacting with the core Stanford NLP library, which allowed us to get the desired output from
             the given input, ultimately allowing us to streamline the current workflow."
+  - name: "CEX.IO Reinvestor"
+    client: "General Public"
+    project: "Application"
+    team:
+      - name: "Zack Urben"
+        link: "#"
+    link:
+      - label: "GitHub"
+        link: "https://github.com/zackurben/cex.io-reinvestor"
+    tech:
+      - label: "Java"
+        link: "https://www.java.com/en/"
+      - label: "Google GSON"
+        link: "https://code.google.com/p/google-gson/"
+    about: "This was a personal project, created to automate the process of reinvesting my dividend earnings back into
+            the Bitcoin Exchange CEX.IO. First created using PHP and my contributions to the API library, I ported the
+            project to Java and created the Java API Library. I made this in Java so others could use it, without
+            compiling PHP with pthreads, since Java ships natively with multithreading support. This is an open source
+            project under the MIT license."
 
 # Build settings
 markdown: kramdown
