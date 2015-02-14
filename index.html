@@ -61,7 +61,7 @@ layout: default
             </div>
             <div class="col-9 thin left">
                 {% for user in project.team %}
-                    <a href="{{ user.link }}">{{ user.name }}</a>&nbsp;
+                    <a href="{{ user.link }}" target="_blank">{{ user.name }}</a>&nbsp;
                 {% endfor %}
             </div>
 
@@ -70,7 +70,7 @@ layout: default
             </div>
             <div class="col-9 thin left">
                 {% for link in project.link %}
-                    <a href="{{ link.link }}">{{ link.label }}</a>&nbsp;
+                    <a href="{{ link.link }}" target="_blank">{{ link.label }}</a>&nbsp;
                 {% endfor %}
             </div>
 
@@ -79,7 +79,7 @@ layout: default
             </div>
             <div class="col-9 thin left">
                 {% for tech in project.tech %}
-                    <a href="{{ tech.link }}">{{ tech.label }}</a>&nbsp;
+                    <a href="{{ tech.link }}" target="_blank">{{ tech.label }}</a>&nbsp;
                 {% endfor %}
             </div>
         </div>
@@ -96,10 +96,10 @@ layout: default
     </div>
     <div class="row">
         <div class="col-12 center">
-            <a href="mailto:{{ site.email }}"><i class="fa fa-envelope-square fa-5x"></i></a>&nbsp;
-            <a href="{{ site.github_profile }}"><i class="fa fa-github-square fa-5x"></i></a>&nbsp;
-            <a href="{{ site.linkedin_profile }}"><i class="fa fa-linkedin-square fa-5x"></i></a>&nbsp;
-            <a href="{{ site.twitter_profile }}"><i class="fa fa-twitter-square fa-5x"></i></a>
+            <a href="mailto:{{ site.email }}" target="_blank"><i class="fa fa-envelope-square fa-5x"></i></a>&nbsp;
+            <a href="{{ site.github_profile }}" target="_blank"><i class="fa fa-github-square fa-5x"></i></a>&nbsp;
+            <a href="{{ site.linkedin_profile }}" target="_blank"><i class="fa fa-linkedin-square fa-5x"></i></a>&nbsp;
+            <a href="{{ site.twitter_profile }}" target="_blank"><i class="fa fa-twitter-square fa-5x"></i></a>
         </div>
     </div>
 </div>

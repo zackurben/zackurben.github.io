@@ -39,6 +39,38 @@ projects:
             fields on the service, the client can login to EZEDIT and manipulate the contents displayed on their site
             in realtime. On page load, the site generated js file will call the EZEDIT API and display the most recent
             content on the site. EZEDIT is an open source project under the MIT license."
+  - name: "Language Processing for Education"
+    client: "MemoryScience"
+    project: "Application"
+    team:
+      - name: "Zack Urben"
+        link: "#"
+      - name: "Spencer Fusco"
+        link: "#"
+      - name: "Scarlett Hunt"
+        link: "#"
+      - name: "Grant Cox"
+        link: "#"
+    link:
+      - label: "Proprietary"
+        link: "#"
+    tech:
+      - label: "PHP"
+        link: "http://php.net/"
+      - label: "Linux"
+        link: "http://www.linux.com/"
+      - label: "JSON"
+        link: "http://json.org/"
+      - label: "Stanford Parser"
+        link: "http://nlp.stanford.edu/software/lex-parser.shtml"
+    about: "This was a Capstone Project, created for MemoryScience, to automate their current manual workflow. This
+            application takes an input body of text, of unlimited length, and converts it into the essential keywords
+            using context free grammar modeling. These keywords are used in conjunction with the original content to aid
+            in the process of information retention, using the MemoryScience LockIN program. My role in this project
+            was, to lead my fellow peers to create a viable solution to solve the problem of manual information
+            processing currently in-place at MemoryScience. I served as the lead developer and created a custom PHP
+            wrapper for interacting with the core Stanford NLP library, which allowed us to get the desired output from
+            the given input, ultimately allowing us to streamline the current workflow."
 
 # Build settings
 markdown: kramdown
