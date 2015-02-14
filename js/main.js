@@ -90,24 +90,28 @@ var chart = function() {
 
 // On page load, register scroll events and create out Chart.
 window.onload = function() {
+    var navHeight = $('nav').height(),
+        paddingHeight = parseInt($('.content').css('padding-top').split('p')[0]),
+        scrollOffset = Math.abs(parseInt(paddingHeight) - navHeight);
+
     // Scroll to the about section on button click.
     $('.scroll, #about-nav').click(function() {
-        $('html, body').animate({scrollTop: $('#about').offset().top}, 'slow');
+        $('html, body').animate({scrollTop: $('#about').offset().top - scrollOffset}, 'slow');
     });
 
     // Scroll to the projects section on button click.
     $('#projects-nav').click(function() {
-        $('html, body').animate({scrollTop: $('#projects').offset().top}, 'slow');
+        $('html, body').animate({scrollTop: $('#projects').offset().top - scrollOffset}, 'slow');
     });
 
     // Scroll to the contacts section on button click.
     $('#contact-nav').click(function() {
-        $('html, body').animate({scrollTop: $('#contact').offset().top}, 'slow');
+        $('html, body').animate({scrollTop: $('#contact').offset().top - scrollOffset}, 'slow');
     });
 
     // Scroll to the top of the page on reverse button click.
-    $('footer div.scroll-reverse').click(function() {
-        $('html, body').animate({scrollTop: 0}, 'slow');
+    $('footer div.scroll.reverse').click(function() {
+        $('html, body').animate({scrollTop: 0}, 'fast');
     });
 
     c = chart();
