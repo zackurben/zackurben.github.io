@@ -92,7 +92,12 @@ var chart = function() {
 window.onload = function() {
     var navHeight = $('nav').height(),
         paddingHeight = parseInt($('.content').css('padding-top').split('p')[0]),
-        scrollOffset = Math.abs(parseInt(paddingHeight) - navHeight);
+        scrollOffset = Math.abs(paddingHeight - navHeight);
+
+    // Hack for small-width devices, to fix nav height issues, due to dynamic DOM elements.
+    if ($(window).width() < 728) {
+        scrollOffset = Math.abs(paddingHeight + navHeight);
+    }
 
     // Scroll to the about section on button click.
     $('.scroll, #about-nav').click(function() {
