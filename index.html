@@ -61,7 +61,11 @@ layout: default
             </div>
             <div class="col-9 thin left">
                 {% for user in project.team %}
-                    <a href="{{ user.link }}" target="_blank">{{ user.name }}</a>&nbsp;
+                    {% if user.link == '#' %}
+                        {{ user.name }}&nbsp;
+                    {% else %}
+                        <a href="{{ user.link }}" target="_blank">{{ user.name }}</a>&nbsp;
+                    {% endif %}
                 {% endfor %}
             </div>
 
@@ -70,7 +74,11 @@ layout: default
             </div>
             <div class="col-9 thin left">
                 {% for link in project.link %}
-                    <a href="{{ link.link }}" target="_blank">{{ link.label }}</a>&nbsp;
+                    {% if link.link == '#' %}
+                        {{ link.label }}&nbsp;
+                    {% else %}
+                        <a href="{{ link.link }}" target="_blank">{{ link.label }}</a>&nbsp;
+                    {% endif %}
                 {% endfor %}
             </div>
 
@@ -79,7 +87,11 @@ layout: default
             </div>
             <div class="col-9 thin left">
                 {% for tech in project.tech %}
-                    <a href="{{ tech.link }}" target="_blank">{{ tech.label }}</a>&nbsp;
+                    {% if tech.link == '#' %}
+                        {{ tech.label }}&nbsp;
+                    {% else %}
+                        <a href="{{ tech.link }}" target="_blank">{{ tech.label }}</a>&nbsp;
+                    {% endif %}
                 {% endfor %}
             </div>
         </div>
