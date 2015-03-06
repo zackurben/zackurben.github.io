@@ -1,8 +1,8 @@
 # Site settings
 title: "Zack Urben"
 description: The personal website for Zack Urben. A place where developers can REST and learn codefu.
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://www.zackurben.com" # the base hostname & protocol for your site
+baseurl: ""
+url: "http://zackurben.com"
 
 # Social Info
 email: "zackurben@gmail.com"
@@ -11,6 +11,63 @@ github_profile: "https://github.com/zackurben"
 linkedin_profile: "https://www.linkedin.com/in/zackurben"
 
 projects:
+  - name: "VacationRoulette"
+    client: "General Public"
+    project: "Web Application"
+    team:
+      - name: "Zack Urben"
+        link: "#"
+      - name: "Jon Darling"
+        link: "http://jmdarling.com/"
+      - name: "Rahat Ahmed"
+        link: "http://rahatah.me/d/"
+    link:
+      - label: "GitHub"
+        link: "https://github.com/vacationroulette/vacationroulette"
+    tech:
+      - label: "Node.js"
+        link: "http://nodejs.org/"
+      - label: "Expressjs"
+        link: "http://expressjs.com/"
+      - label: "Pure CSS"
+        link: "http://purecss.io/"
+    about: "VacationRoulette is a web application that allows anyone to find a vacation quickly, without much planning.
+            Utilizing the public API provided by <a href=\"https://developer.sabre.com/\">Sabre</a>, VacationRoulette
+            can generate spur of the moment, round-trip, vacations without requiring you to plan the vacation yourself.
+            Using the Sabre data and our optional filters, we create dynamic <a href=\"http://www.kayak.com/\">Kayak</a>
+            URLs to book the trip using the provider of your choice. VacationRoulette requires only a leaving/returning
+            date and an Airport code to get started. Additionally, you may use the optional filters such as: general
+            price point, desired theme, and relative location. Once a suggestion has been made, you can book a trip
+            using that information, or generate a new trip. VacationRoulette is an open source project under the MIT
+            license, and was made for <a href=\"http://hackdfw.com/\">HackDFW</a>."
+  - name: "zackurben.com"
+    client: "General Public"
+    project: "Website"
+    team:
+      - name: "Zack Urben"
+        link: "#"
+    link:
+      - label: "GitHub"
+        link: "https://github.com/zackurben/zackurben.github.io"
+    tech:
+      - label: "Jekyll"
+        link: "http://jekyllrb.com/"
+      - label: "Sass"
+        link: "http://sass-lang.com/"
+      - label: "jQuery"
+        link: "http://jquery.com/"
+      - label: "normalize.css"
+        link: "http://necolas.github.io/normalize.css/"
+      - label: "Chart.js"
+        link: "http://www.chartjs.org/"
+      - label: "Modernizr"
+        link: "http://modernizr.com/"
+    about: "My profile website is the test bed that enables me to learn new technology. For this website, I created just
+           about everything, from the design to the custom grid. I wanted to make a static website where I could play
+           curator for my living resume. I deployed Jekyll to create static pages, so I could harness the power of its
+           templating engine, and in the future, its blogging platform. The main motivation behind this project, other
+           than purely having a portfolio website, was to get more acquainted with front end development. I used Sass to
+           better design a responsive project with more dynamic break points for a given display."
   - name: "EZEDIT"
     client: "General Public"
     project: "Platform As A Service (PAAS)"
@@ -33,12 +90,15 @@ projects:
         link: "http://expressjs.com/"
       - label: "Backbone.js"
         link: "http://backbonejs.org/"
+      - label: "Bootstrap"
+        link: "http://getbootstrap.com/"
     about: "EZEDIT is a Platform as a Service (PAAS) for web designers to give their clients full control of the
             digital content on their website. As a designer, you make a website and tag HTML fields with
             data-attributes that you want the client to have access to edit; after mapping the corresponding
             fields on the service, the client can login to EZEDIT and manipulate the contents displayed on their site
             in realtime. On page load, the site generated js file will call the EZEDIT API and display the most recent
-            content on the site. EZEDIT is an open source project under the MIT license."
+            content on the site. EZEDIT is an open source project under the MIT license, and was made for
+            <a href=\"http://hackutd.co/\">Hack_UTD</a>."
   - name: "Language Processing for Education"
     client: "MemoryScience"
     project: "Application"
