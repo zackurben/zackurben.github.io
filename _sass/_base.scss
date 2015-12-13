@@ -341,11 +341,43 @@ nav {
   box-sizing: border-box;
 }
 
-#skill-chart {
-  width: 75% !important;
-  max-width: 75% !important;
-  height: 75% !important;
-  max-height: 75% !important;
+.ct-series-a {
+  .ct-point,
+  .ct-line {
+    stroke: rgba(27, 188, 155, 1);
+  }
+  .ct-area {
+    fill-opacity: 1;
+    fill: rgba(27, 188, 155, 0.5);
+  }
+}
+
+.ct-series-b {
+  .ct-point,
+  .ct-line {
+    stroke: rgba(29, 29, 29, 1);
+  }
+  .ct-area {
+    fill-opacity: 1;
+    fill: rgba(29, 29, 29, 0.5);
+  }
+}
+
+.ct-label.ct-horizontal.ct-end {
+  -moz-transform: rotate(30deg) translateY(20px);
+  -webkit-transform: rotate(30deg) translateY(20px);
+  -o-transform: rotate(30deg) translateY(20px);
+  -ms-transform: rotate(30deg) translateY(20px);
+  transform: rotate(30deg) translateY(20px);
+}
+
+.ct-legend {
+  .professional {
+    color: rgba(29, 29, 29, 1)
+  }
+  .personal {
+    color: rgba(27, 188, 155, 1);
+  }
 }
 
 // Alignment stuff.
@@ -521,7 +553,7 @@ nav {
 
   .off-12, .off-11, .off-10, .off-9, .off-8, .off-7,
   .off-6, .off-5, .off-4, .off-3, .off-2, .off-1 {
-    margin-left: 0%;
+    margin-left: 0;
   }
 }
 

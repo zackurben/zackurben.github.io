@@ -1,91 +1,36 @@
-// Chart reference.
-var c = {};
+'use strict';
 
-// 2D canvas context.
-var ctx = document.getElementById('skill-chart').getContext('2d');
+/**
+ * Get the total time of exp from the given start time to now. Used for skills currently in use.
+ *
+ * @param start {Number}
+ *   The time this skill was acquired.
+ * @param stop {Number} optional
+ *   The time this skill was no longer being used (EPOCH in ms).
+ */
+var timeFrom = function(start, stop) {
+  var time = stop ? stop : (new Date()).getTime();
+  var delta = parseFloat(time - start);
 
-// Skills data.
-var data = {
-  labels: ['Java', 'HTML5', 'SQL', 'CSS3', 'JavaScript', 'UNIX', 'PHP', 'Git'],
-  datasets: [
-    {
-      label: 'Personal',
-      fillColor: 'rgba(27,188,155,0.5)',
-      strokeColor: '#fff',
-      pointColor: 'rgba(27,188,155,1)',
-      pointStrokeColor: '#fff',
-      pointHighlightFill: '#fff',
-      pointHighlightStroke: 'rgba(220,220,220,1)',
-      data: [8, 4, 4, 4, 2, 3, 4, 3]
-    },
-    {
-      label: 'Professional',
-      fillColor: 'rgba(29,29,29,0.5)',
-      strokeColor: '#fff',
-      pointColor: 'rgba(29,29,29,1)',
-      pointStrokeColor: '#fff',
-      pointHighlightFill: '#fff',
-      pointHighlightStroke: 'rgba(151,187,205,1)',
-      data: [0, 2, 2, 2, 1, 2, 2, 2]
-    }
-  ]
+  // ms to years
+  delta = delta / (1000 * 60 * 60 * 24 * 365);
+  return delta;
 };
 
-// Current chart specifics.
-var personal = {
-  color: '#1d1d1d',
-  font: 'Open Sans, sans-serif',
-  size: parseInt($('html, body').css('font-size').split('p')[0]) || 24,
-  style: '300'
-};
-
-// Override base Chartjs options.
-var options = {
-  responsive: true,
-  maintainAspectRatio: true,
-
-  pointLabelFontColor : personal.color,
-  pointLabelFontFamily : personal.font,
-  pointLabelFontSize : personal.size,
-  pointLabelFontStyle : personal.style,
-
-  scaleFontColor: personal.color,
-  scaleFontFamily: personal.font,
-  scaleFontSize: personal.size,
-  scaleFontStyle: personal.style,
-
-  tooltipFontColor: '#fff',
-  tooltipFontFamily: personal.font,
-  tooltipFontSize: personal.size,
-  tooltipFontStyle: personal.style,
-
-  tooltipTitleFontColor: '#fff',
-  tooltipTitleFontFamily: personal.font,
-  tooltipTitleFontSize: personal.size,
-  tooltipTitleFontStyle: '400',
-
-  scaleLabel: '<%=value%>',
-
-  //String - A legend template
-  legendTemplate: '<% for (var i=0; i<datasets.length; i++){%><i class=\'fa fa-square\' style=\'color:<%=datasets[i].fillColor%>\'></i>&nbsp;<%if(datasets[i].label){%><%=datasets[i].label%><br><%}%><%}%>',
-
-  //String - Custom text to the tooltip
-  multiTooltipTemplate: '<%= datasetLabel %> - <%= value %> years.'
-};
-
-var chart = function() {
-  personal.size = parseInt($('html, body').css('font-size').split('p')[0]);
-  ctx.canvas.width = 512;
-  ctx.canvas.height = 512;
-
-  var _c = new Chart(ctx).Radar(data, options);
-  _c.scale.fontSize = personal.size;
-  _c.scale.showLabels = true;
-  _c.update();
-
-  $('#skill-legend').html(_c.generateLegend());
-  return _c;
-};
+// Dynamic list of skills.
+var skills = _.sortByOrder([
+  {type: 'Java', personal: 8, professional: 0},
+  {type: 'HTML5', personal: timeFrom(1262325600000), professional: timeFrom(1372654800000)},
+  {type: 'SQL', personal: timeFrom(1262325600000, 1425189600000), professional: timeFrom(1372654800000, 1425189600000)},
+  {type: 'CSS3', personal: timeFrom(1262325600000), professional: timeFrom(1372654800000)},
+  {type: 'JavaScript', personal: timeFrom(1343797200000), professional: timeFrom(1393653600000)},
+  {type: 'Node.js', personal: timeFrom(1420092000000), professional: timeFrom(1430456400000)},
+  {type: 'UNIX', personal: timeFrom(1343797200000), professional: timeFrom(1372654800000)},
+  {type: 'PHP', personal: timeFrom(1262325600000, 1425189600000), professional: timeFrom(1372654800000, 1425189600000)},
+  {type: 'Git', personal: timeFrom(1343797200000), professional: timeFrom(1393653600000)},
+  {type: 'MongoDB', personal: timeFrom(1393653600000), professional: timeFrom(1393653600000)},
+  {type: 'Redis', personal: timeFrom(1393653600000), professional: timeFrom(1393653600000)}
+], ['professional'], ['desc']);
 
 // On page load, register scroll events and create out Chart.
 window.onload = function() {
@@ -118,10 +63,20 @@ window.onload = function() {
     $('html, body').animate({scrollTop: 0}, 'fast');
   });
 
-  c = chart();
+  new Chartist.Line('.ct-chart', {
+    labels: _.pluck(skills, 'type'),
+    series: [
+      _.pluck(skills, 'personal'),
+      _.pluck(skills, 'professional')
+    ]
+  }, {
+    low: 0,
+    showArea: true,
+    axisY: {
+      offset: 80,
+      labelInterpolationFnc: function(value) {
+        return value + ' Years'
+      }
+    }
+  });
 };
-
-// Add a resize event listener to remake the chart with responsive font-sizes.
-window.addEventListener('resize', function(){
-  c = chart();
-});
