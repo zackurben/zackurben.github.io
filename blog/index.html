@@ -1,0 +1,12 @@
+---
+layout: blog
+---
+{% for post in site.posts %}
+  <div class="row">
+    <div class="col-12 blog-list-item">
+      <a href="{{ post.url }}" class="pull-left">{{ post.title }}</a><small class="pull-right blog-date">{{ post.displayDate || post.date }}</small>
+      {% if !!post.summary %}<br><small class="blog-summary">{{ post.summary }}</small><br>{% endif %}
+    </div>
+  </div><br>
+{% endfor %}
+
