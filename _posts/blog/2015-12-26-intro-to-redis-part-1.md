@@ -18,15 +18,15 @@ technical blog post. I'm currently using Redis for the [Form.io](http://form.io/
 for a queueing system, but its elegance lures me for every project.
 
 <br>
-[Redis](http://redis.io/) is an in-memory data store with a multitude of uses. It is used by everyone from Coinbase to
-Kickstarter to Alibaba, for more see [techstacks.io](http://techstacks.io/tech/redis). The general topic of Redis is
-quite large, so in the first part of this series, I am going to generally cover: `Keys`, `Strings`, `Lists`, and 
-`Transactions`. Feel free to follow along in your terminal and get your feet wet with Redis!
+[Redis](http://redis.io/) is an in-memory data store with a multitude of uses. It is blazing fast and used by everyone 
+from Coinbase to Kickstarter to Alibaba, for more see: [techstacks.io](http://techstacks.io/tech/redis). The general 
+topic of Redis is quite large, so in the first part of this series, I am going to generally cover: `Keys`, `Strings`, 
+`Lists`, and `Transactions`. Feel free to follow along in your terminal and get your feet wet with Redis!
 
 <br>
-It should be noted that the [Redis Documentation](http://redis.io/commands) is terrific, and even shows asymptotic
+*It should be noted that the [Redis Documentation](http://redis.io/commands) is terrific, and even shows asymptotic
 time complexity (in big O) for each command, so you can judge whether or not a command is acceptable to use in your 
-application.
+application.*
 
 <br>
 `Note: All redis commands can be used in lowercase, but I'll stay consistent with the documentation and use uppercase
@@ -145,7 +145,10 @@ Lists are another commonly used storage type, which can be visualized as a JSON 
 }
 </code></pre>
 
-A list can have items added, removed, trimmed, and retrieved with `LPUSH`, `LPOP`, `LTRIM`, and `LRANGE`.
+A list can have items added, removed, trimmed, and retrieved with `LPUSH`, `LPOP`, `LTRIM`, and `LRANGE`. 
+
+<br>
+`NOTE: Most of the list commands take a start and end index, where 0 is the first element and -1 is the last.`
 
 <pre><code class="bash">127.0.0.1:6379> LPUSH hello world1
 (integer) 1
@@ -178,6 +181,65 @@ follow the given naming pattern:
  &emsp; R* &nbsp; -> &nbsp; Starting from the Right
  &emsp; *X &nbsp; -> &nbsp; If it exists
 </code></pre>
+
+###Transactions
+---
+Transactions in Redis are not traditional transactions, in the sense that they can't be rolled back. However, 
+transactions are collection of commands which can be executed conditionally and save a tremendous amount of time by 
+using a single network request for all of the queries together.
+
+<br>
+A Transaction can be initialized, canceled, and executed with `MULTI`, `DISCARD` and `EXEC`. When a transaction is 
+started, none of the commands will be executed until the transaction block is finished with an `EXEC` call, and each
+command is executed atomically in order.
+
+<pre><code class="bash">127.0.0.1:6379> MULTI
+OK
+127.0.0.1:6379> GET hello
+QUEUED
+127.0.0.1:6379> EXEC
+1) (nil)
+127.0.0.1:6379> MULTI
+OK
+127.0.0.1:6379> GET hello
+QUEUED
+127.0.0.1:6379> DISCARD
+OK
+127.0.0.1:6379>  
+</code></pre>
+
+You may have considered that the previous example could cause issues in a multi threaded environment (Redis itself is
+single threaded so all operations are atomic and executed in order). In the situation where a transaction is dependent
+on a previous transaction or query, the `WATCH` command can be used to conditionally execute a transaction. If a watched
+key is changed by another source, the transaction will not execute. Additionally all the watched keys can be removed
+with the `UNWATCH` command.
+
+<pre><code class="bash">127.0.0.1:6379> WATCH hello
+OK
+127.0.0.1:6379> MULTI
+OK
+127.0.0.1:6379> SET hello world
+QUEUED
+127.0.0.1:6379> get hello
+QUEUED
+127.0.0.1:6379> EXEC
+1) OK
+2) "world"
+127.0.0.1:6379> UNWATCH
+OK 
+</code></pre>
+
+
+<br>
+
+###Conclusion
+---
+As stated earlier, the aim of this post was to scratch the surface of Redis. Many things are possible with Redis, and I 
+plan on making a practical demo for how it can be integrated into a project rather than interactive terminal use. That
+being said, I also want to explore the depths of Redis, so perhaps there are a few follow up posts including clusters
+and scripting. I urge everyone to try Redis themselves and actually *feel* how fast it is compared to other databases.
+The official documentation is on the [Redis Website](http://redis.io/commands), where you can find more
+commands than I previewed here.
 
 <br>
 I hope someone found this post helpful, and as always feel free to reach out to me on 
