@@ -1,6 +1,6 @@
 ---
 title: "Intro to Redis part 1"
-displayDate: "2015-12-26"
+displayDate: "2015-12-27"
 summary: "An introduction to Redis."
 tags:
 ---
