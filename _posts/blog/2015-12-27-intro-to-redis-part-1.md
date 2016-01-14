@@ -248,3 +248,6 @@ I hope someone found this post helpful, and as always feel free to reach out to 
 &minus; Zack
 
 <br>
+
+---
+**EDIT:** My [Intro to Redis part 2](/blog/intro-to-redis-part-2/) is now up!
