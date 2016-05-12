@@ -3,6 +3,7 @@ title: "Zack Urben"
 description: The personal website for Zack Urben. A place where developers can REST and learn codefu.
 baseurl: ""
 url: "http://zackurben.com"
+gems: ["jekyll-paginate"]
 
 # Social Info
 email: "zackurben@gmail.com"
