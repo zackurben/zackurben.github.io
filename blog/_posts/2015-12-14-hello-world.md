@@ -9,7 +9,7 @@ tags:
 </small>
 <br><br>
 
-##{{ page.title }}
+## {{ page.title }}
 {{ page.summary }}
 
 ---

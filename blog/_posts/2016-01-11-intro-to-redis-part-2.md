@@ -9,7 +9,7 @@ tags:
 </small>
 <br><br>
 
-##{{ page.title }}
+## {{ page.title }}
 {{ page.summary }}
 
 ---
@@ -28,7 +28,7 @@ for all the examples in this series.`
 
 <br>
 
-###Hashes
+### Hashes
 ---
 Hashes are key-value pairs that share a single key (Redis inception?). Hashes can be visualized as the JSON Object:
 
@@ -126,7 +126,7 @@ you.
 
 <br>
 
-###Example
+### Example
 ---
 
 The trick to using Redis successfully is knowing what tools you have at your disposal. Deploying with the *correct*
@@ -198,7 +198,7 @@ around small hashes, to greatly reduce their memory footprint even further.
 <br>
 <br>
 
-###Conclusion
+### Conclusion
 ---
 As stated earlier, the aim of this post was to explore the `Hash` data type and understand its use cases. Hashes are
 fundamentally collections of properties relating to a single common key. Using Hashes vs standard Keys can save a

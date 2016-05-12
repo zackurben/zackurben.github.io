@@ -9,23 +9,23 @@ tags:
 </small>
 <br><br>
 
-##{{ page.title }}
+## {{ page.title }}
 {{ page.summary }}
 
 ---
-I've recently rekindled my love for Redis through work, and thought it would be an acceptable topic for my first 
-technical blog post. I'm currently using Redis for the [Form.io](http://form.io/) analytics system, and previously 
+I've recently rekindled my love for Redis through work, and thought it would be an acceptable topic for my first
+technical blog post. I'm currently using Redis for the [Form.io](http://form.io/) analytics system, and previously
 for a queueing system, but its elegance lures me for every project.
 
 <br>
-[Redis](http://redis.io/) is an in-memory data store with a multitude of uses. It is blazing fast and used by everyone 
-from Coinbase to Kickstarter to Alibaba, for more see: [techstacks.io](http://techstacks.io/tech/redis). The general 
-topic of Redis is quite large, so in the first part of this series, I am going to generally cover: `Keys`, `Strings`, 
+[Redis](http://redis.io/) is an in-memory data store with a multitude of uses. It is blazing fast and used by everyone
+from Coinbase to Kickstarter to Alibaba, for more see: [techstacks.io](http://techstacks.io/tech/redis). The general
+topic of Redis is quite large, so in the first part of this series, I am going to generally cover: `Keys`, `Strings`,
 `Lists`, and `Transactions`. Feel free to follow along in your terminal and get your feet wet with Redis!
 
 <br>
 *It should be noted that the [Redis Documentation](http://redis.io/commands) is terrific, and even shows asymptotic
-time complexity (in big O) for each command, so you can judge whether or not a command is acceptable to use in your 
+time complexity (in big O) for each command, so you can judge whether or not a command is acceptable to use in your
 application.*
 
 <br>
@@ -34,7 +34,7 @@ for all the examples in this series.`
 
 <br>
 
-###Installation
+### Installation
 ---
 You can download the latest version of Redis [here](http://redis.io/download), and follow the installation directions.
 When complete, start the `redis-server` in the background and then connect with the `redis-cli`.
@@ -42,23 +42,23 @@ When complete, start the `redis-server` in the background and then connect with 
 <pre><code class="bash">$ redis-server
 -- output condensed --
 
-                _._                                                  
-           _.-``__ ''-._                                             
+                _._
+           _.-``__ ''-._
       _.-``    `.  `_.  ''-._           Redis 3.0.4 (00000000/0) 64 bit
-  .-`` .-```.  ```\/    _.,_ ''-._                                   
+  .-`` .-```.  ```\/    _.,_ ''-._
  (    '      ,       .-`  | `,    )     Running in standalone mode
  |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
  |    `-._   `._    /     _.-'    |     PID: 75162
-  `-._    `-._  `-./  _.-'    _.-'                                   
- |`-._`-._    `-.__.-'    _.-'_.-'|                                  
- |    `-._`-._        _.-'_.-'    |           http://redis.io        
-  `-._    `-._`-.__.-'_.-'    _.-'                                   
- |`-._`-._    `-.__.-'    _.-'_.-'|                                  
- |    `-._`-._        _.-'_.-'    |                                  
-  `-._    `-._`-.__.-'_.-'    _.-'                                   
-      `-._    `-.__.-'    _.-'                                       
-          `-._        _.-'                                           
-              `-.__.-'                          
+  `-._    `-._  `-./  _.-'    _.-'
+ |`-._`-._    `-.__.-'    _.-'_.-'|
+ |    `-._`-._        _.-'_.-'    |           http://redis.io
+  `-._    `-._`-.__.-'_.-'    _.-'
+ |`-._`-._    `-.__.-'    _.-'_.-'|
+ |    `-._`-._        _.-'_.-'    |
+  `-._    `-._`-.__.-'_.-'    _.-'
+      `-._    `-.__.-'    _.-'
+          `-._        _.-'
+              `-.__.-'
 
 -- output condensed --
 </code></pre>
@@ -70,7 +70,7 @@ When complete, start the `redis-server` in the background and then connect with 
 
 <br>
 
-###Keys and Strings
+### Keys and Strings
 ---
 Redis is a key value store, it can be visualized as a JSON object:
 <pre><code class="json">{
@@ -78,7 +78,7 @@ Redis is a key value store, it can be visualized as a JSON object:
 }
 </code></pre>
 
-You can easily create, read, type check, and delete keys with `SET`, `GET`, `TYPE` and `DEL` commands respectively. 
+You can easily create, read, type check, and delete keys with `SET`, `GET`, `TYPE` and `DEL` commands respectively.
 
 <pre><code class="bash">$ redis-cli
 127.0.0.1:6379> SET hello world
@@ -91,7 +91,7 @@ string
 (integer) 1
 127.0.0.1:6379> GET hello
 (nil)
-127.0.0.1:6379> 
+127.0.0.1:6379>
 </code></pre>
 
 Additionally, there are two forms of updates, one for the key and the other for the value: `RENAME` and `SET`
@@ -127,12 +127,12 @@ OK
 (integer) 1
 127.0.0.1:6379> TTL hello
 (integer) -1
-127.0.0.1:6379> 
+127.0.0.1:6379>
 </code></pre>
 
 <br>
 
-###Lists
+### Lists
 ---
 Lists are another commonly used storage type, which can be visualized as a JSON Array:
 
@@ -145,7 +145,7 @@ Lists are another commonly used storage type, which can be visualized as a JSON 
 }
 </code></pre>
 
-A list can have items added, removed, trimmed, and retrieved with `LPUSH`, `LPOP`, `LTRIM`, and `LRANGE`. 
+A list can have items added, removed, trimmed, and retrieved with `LPUSH`, `LPOP`, `LTRIM`, and `LRANGE`.
 
 <br>
 `NOTE: Most of the list commands take a start and end index, where 0 is the first element and -1 is the last.`
@@ -169,11 +169,11 @@ OK
 "world3"
 127.0.0.1:6379> LRANGE hello 0 -1
 1) "world2"
-127.0.0.1:6379> 
+127.0.0.1:6379>
 </code></pre>
 
 <br>
-Notice how the previous operations are prepended with an L. Most of the list functions come in multiple variations that 
+Notice how the previous operations are prepended with an L. Most of the list functions come in multiple variations that
 follow the given naming pattern:
 
 <pre><code class="text"> &emsp; B* &nbsp; -> &nbsp; Blocking
@@ -182,14 +182,14 @@ follow the given naming pattern:
  &emsp; *X &nbsp; -> &nbsp; If it exists
 </code></pre>
 
-###Transactions
+### Transactions
 ---
-Transactions in Redis are not traditional transactions, in the sense that they can't be rolled back. However, 
-transactions are collection of commands which can be executed conditionally and save a tremendous amount of time by 
+Transactions in Redis are not traditional transactions, in the sense that they can't be rolled back. However,
+transactions are collection of commands which can be executed conditionally and save a tremendous amount of time by
 using a single network request for all of the queries together.
 
 <br>
-A Transaction can be initialized, canceled, and executed with `MULTI`, `DISCARD` and `EXEC`. When a transaction is 
+A Transaction can be initialized, canceled, and executed with `MULTI`, `DISCARD` and `EXEC`. When a transaction is
 started, none of the commands will be executed until the transaction block is finished with an `EXEC` call, and each
 command is executed atomically in order.
 
@@ -205,7 +205,7 @@ OK
 QUEUED
 127.0.0.1:6379> DISCARD
 OK
-127.0.0.1:6379>  
+127.0.0.1:6379>
 </code></pre>
 
 You may have considered that the previous example could cause issues in a multi threaded environment (Redis itself is
@@ -226,15 +226,15 @@ QUEUED
 1) OK
 2) "world"
 127.0.0.1:6379> UNWATCH
-OK 
+OK
 </code></pre>
 
 <br>
 <br>
 
-###Conclusion
+### Conclusion
 ---
-As stated earlier, the aim of this post was to scratch the surface of Redis. Many things are possible with Redis, and I 
+As stated earlier, the aim of this post was to scratch the surface of Redis. Many things are possible with Redis, and I
 plan on making a practical demo for how it can be integrated into a project rather than interactive terminal use. That
 being said, I also want to explore the depths of Redis, so perhaps there are a few follow up posts including clusters
 and scripting. I urge everyone to try Redis themselves and actually *feel* how fast it is compared to other databases.
@@ -242,7 +242,7 @@ The official documentation is on the [Redis Website](http://redis.io/commands), 
 commands than I previewed here.
 
 <br>
-I hope someone found this post helpful, and as always feel free to reach out to me on 
+I hope someone found this post helpful, and as always feel free to reach out to me on
 [Twitter]({{ site.twitter_profile }}) and suggest new topics for me to cover!
 
 &minus; Zack

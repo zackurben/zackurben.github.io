@@ -9,7 +9,7 @@ tags:
 </small>
 <br><br>
 
-##{{ page.title }}
+## {{ page.title }}
 {{ page.summary }}
 
 ---
@@ -188,7 +188,7 @@ Forgive the animal/zoo references, it happened to be a better story than reading
 <br>
 <br>
 
-##Examples
+### Examples
 If we want to look at the power of Redis sets with real world examples, let's consider the following: We have an
 E-commerce website, and want to track the visitors each month.
 
@@ -215,7 +215,7 @@ Or, you're lazy and want to play Rock, Paper, Scissors..
 <br>
 <br>
 
-###Conclusion
+### Conclusion
 ---
 As stated earlier, the aim of this post was to explore the `Set` data type and understand its use cases. Sets are great
 when dealing with unique items, and can make calculating the difference between multiple collections of data a breeze.
