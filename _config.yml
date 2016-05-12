@@ -152,7 +152,7 @@ projects:
             compiling PHP with pthreads, since Java ships natively with multithreading support. This is an open source
             project under the MIT license."
 
-permalink: /blog/:title
+permalink: /blog/:title/
 defaults:
   -
     scope:
