@@ -199,20 +199,17 @@ E-commerce website, and want to track the visitors each month.
     then `SCARD jan2016`
 
 <br>
-<br>
 Or, alternatively, If you wanted to give away 3 prizes to 5 people:
 
   - `SADD pool person1 ... person5`
   - `SPOP pool` &emsp; 3 times, to ensure there was no duplicate prizes given out.
 
 <br>
-<br>
 Or, you're lazy and want to play Rock, Paper, Scissors..
 
   - `SADD rps Rock Paper Scissors`
   - `SRANDMEMBER rps` &emsp; then... Up-Arrow + Enter
 
-<br>
 <br>
 
 ### Conclusion
