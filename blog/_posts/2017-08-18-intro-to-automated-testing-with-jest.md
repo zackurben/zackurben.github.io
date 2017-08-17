@@ -14,7 +14,7 @@ tags:
 
 ---
 
-Welcome back to another post. Today I wanted to highlight my favorite automated testing library, [Jest](https://github.com/facebook/jest), from Facebook. This is a delightful tool with built in code coverage, that is super simple to get started with. For this post, I've created a [GitHub Repository](https://github.com/zackurben/intro-to-jest) for you to follow if you get lost.
+Welcome back to another post. Today I wanted to highlight my favorite automated testing library, [Jest](https://github.com/facebook/jest), from Facebook. This is a delightful tool with built in code coverage and has minimal setup time. For this post, I've created a [GitHub Repository](https://github.com/zackurben/intro-to-jest) for you to follow, if you get lost.
 
 To get started with Jest in your [NPM](https://www.npmjs.com/) based projects, you can add it as a dev dependency:
 
@@ -24,39 +24,177 @@ npm i --save-dev jest
 
 Once installed, you can instantly get started with writing tests!
 
-## Sum Module
-
-I've made a simple module in the sister repo, which contains a single function for calculating the sum of the given numbers. Using ES6 syntax, our function will:
-
-  1. Filter all of the input arguments using the Number class
-  2. Reduce the array into a single value with our custom accumulator
-  3. Return the sum of all input numbers
-
-```javascript
-'use strict';
-
-module.exports = {
-  sum: (...args) => args.filter(Number).reduce((sum, value) => sum + value, 0)
-};
-```
-
 ## Writing Tests
 
 To get started with writing tests, it should be known that Jest will look in 3 pre-defined places for test code, but you can configure any location using the [testMatch configuration](http://facebook.github.io/jest/docs/en/configuration.html#testmatch-array-string) setting.
 
-For simplicity, I've created a root level file called `index.test.js`, to test my `index.js` file. The names don't have to match, but speaking for anyone who has to work with your code, _make them match_.
+For simplicity, I've created a root level file called `index.test.js`, to test my `index.js` file. The names are not required to match, but speaking for anyone who may touch your code, please _make them match_.
 
-Finally, to get started with writing tests, you dont need to import any assertion libraries or additional libs, simply write code using their simple test and assert syntax. For my test file, I've created two simple usecases for my library:
-
-  1. Verify that my default values are working
-  2. Demonstrate the ability to calculate the sum of n numbers
-
-The final file is as follows.
+To write your first test, you dont need to import any assertion libraries or additional utilities, simply write code using the simple test and assertion syntax. The test syntax for simple cases, synchronous code or promise based asychronous code, is as follows:
 
 ```javascript
 'use strict';
 
-const sum = require('./').sum;
+test('this is the identifier for my test', () => {
+  // Write assertions or return promise which contains assertions.
+});
+```
+
+Assertions are pretty straight forward if you have ever used them before. They all take the form of:
+
+```javascript
+expect(<anything>).toBe<something>()
+```
+
+For example:
+
+```javascript
+expect(null).toBeNull();            // true
+expect(NaN).toBeNaN();              // true
+expect(undefined).toBeUndefined();  // true
+```
+
+Putting our test skeleton and some assertions together, we get a crude test used for testing JavaScript internals.
+
+>See the full list of [Assertion Methods](http://facebook.github.io/jest/docs/en/expect.html#methods)
+
+```javascript
+'use strict';
+
+test('various assertion tests', () => {
+  expect(null).toBeNull();
+  expect(NaN).toBeNaN();
+  expect(undefined).toBeUndefined();
+  expect([]).toBeInstanceOf(Array);
+  expect(1).toBeTruthy();
+  expect(true).toBe(true);
+  expect({ foo: 'bar' }).toHaveProperty('foo', 'bar');
+});
+```
+
+## Running Tests
+
+Now that we have a test, we need to run it. Since Jest configures the binary into the project path, `./node_modules/.bin/jest`, we can run any tests via `npm` with a simple test script:
+
+```json
+// Inside package.json
+// This is to avoid directly executing jest or installing it globally
+{
+  "script": {
+    "test": "jest"
+  }
+}
+```
+
+To run the tests for a single file, we can add the path directly to the npm script command using `--` as follows: 
+
+```bash
+$ npm test -- assert.test.js
+
+> intro-to-jest@0.0.1 test C:\code\intro-to-jest
+> jest "assert.test.js"
+
+ PASS  .\assert.test.js
+  √ various assertion tests (13ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        0.978s, estimated 1s
+Ran all test suites matching "assert.test.js".
+```
+
+What does a broken test look like? Using the following test, we can see the output for a failing test too:
+
+```javascript
+test('this wont pass', () => {
+  expect(NaN).toBeTruthy();
+});
+```
+
+```bash
+$ npm test -- assert.test.js
+
+> intro-to-jest@0.0.1 test C:\code\intro-to-jest
+> jest "assert.test.js"
+
+ FAIL  .\assert.test.js
+  ● this wont pass
+
+    expect(received).toBeTruthy()
+
+    Expected value to be truthy, instead received
+      NaN
+
+      at Object.<anonymous>.test (assert.test.js:14:15)
+      at process._tickCallback (internal/process/next_tick.js:109:7)
+
+  √ this is the identifier for my test (13ms)
+  × this wont pass (1ms)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 1 passed, 2 total
+Snapshots:   0 total
+Time:        0.996s, estimated 1s
+Ran all test suites matching "assert.test.js".
+npm ERR! Test failed.  See above for more details.
+```
+
+## Real Example
+
+Asserting that language level constructs pass tests is pretty boring, so I've included a more in-depth example too. I've made a simple module in the sister repo, which contains a few functions for calculating the sum of the given numbers (wildly impractical).
+
+```javascript
+'use strict';
+
+/**
+ * Get the sum of the input variables, coerced into a number.
+ * 
+ * @param {*} args
+ *   The arguments to sum.
+ * 
+ * @returns {Number}
+ *   The sum of the input variables or 0.
+ */
+const sum = (...args) => args.filter(Number).reduce((sum, value) => sum + value, 0);
+
+/**
+ * Get the sum of the input variables, coerced into a number, as a delayed promise.
+ * 
+ * @param {*} args
+ *   The arguments to sum.
+ * 
+ * @returns {Promise}
+ *   The promise of the sum.
+ */
+const sumP = (...args) => new Promise(resolve => setTimeout(() => resolve(sum.apply(this, args)), 1000));
+
+/**
+ * Get the sum of the input variables, coerced into a number, as a callback value.
+ * 
+ * @param {*} args
+ *   The arguments to sum with a callback.
+ */
+const sumC = (...args) => {
+  const cb = args.pop();
+  if (!cb || typeof cb !== 'function') {
+    return undefined;
+  }
+
+  return cb(sum.apply(this, args));
+};
+
+module.exports = {
+  sum,
+  sumP,
+  sumC
+};
+```
+
+```javascript
+'use strict';
+
+const { sum, sumP, sumC } = require('./');
 
 test('sum without arguments returns 0', () => {
   expect(sum()).toBe(0);
@@ -64,5 +202,28 @@ test('sum without arguments returns 0', () => {
 
 test('sum of 1 and 2 is 3', () => {
   expect(sum(1, 2)).toBe(3);
+});
+
+test('sumP returns a promise', () => {
+  expect(sumP(1, 2)).toBeInstanceOf(Promise);
+});
+
+test('sumP of 3 and 4 is 7', () =>
+  sumP(3, 4).then(val => {
+    expect(val).toBe(7);
+  }));
+
+test('sumC without a arguments returns undefined', () => {
+  expect(sumC()).toBeUndefined();
+});
+
+test('sumC without a callback returns undefined', () => {
+  expect(sumC(1)).toBeUndefined();
+});
+
+test('sumC of 1 with a callback returns 1', () => {
+  sumC(1, value => {
+    expect(value).toBe(1);
+  });
 });
 ```
