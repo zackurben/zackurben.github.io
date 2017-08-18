@@ -14,10 +14,10 @@ tags:
 
 ---
 
-Welcome back to another post. Today I wanted to highlight my favorite automated testing library, [Jest](https://github.com/facebook/jest), from Facebook. This is a delightful tool with built in code coverage and minimal setup time. For this post, I've created a [GitHub Repository](https://github.com/zackurben/intro-to-jest) for you to use as you follow along, if you choose to.
+Welcome back to another post. Today I wanted to highlight my new favorite automated testing library, [Jest](https://github.com/facebook/jest), from Facebook. This is a delightful tool with built in code coverage and minimal setup time. For this post, I've created a [GitHub Repository](https://github.com/zackurben/intro-to-jest) for you to use as you follow along, if you choose to.
 
 <br>
-To get started with Jest in your [NPM](https://www.npmjs.com/) based projects, you can add it as a dev dependency. Once installed, you can instantly get started with writing tests!
+To get started with Jest in a [NPM](https://www.npmjs.com/) based project, simply add it as a dev dependency. Once installed, you can instantly get started with writing tests!
 
 ```bash
 npm i --save-dev jest
@@ -27,12 +27,12 @@ npm i --save-dev jest
 ### Writing Tests
 ---
 
-To get started with writing tests, it should be known that Jest will look for 3 pre-defined patterns to test code. Any files in the `__test__` folder and files ending in `.test.js` or `spec.js` will auto-magically be picked up by jest.
+Before getting started with the first test, it should be known that Jest will look for 3 predefined patterns to test code. Any files in the `__test__` folder and files ending in `.test.js` or `.spec.js` will auto-magically be picked up by jest.
 
 >Note: You can configure any location using the [testMatch configuration](http://facebook.github.io/jest/docs/en/configuration.html#testmatch-array-string) setting.
 
 <br>
-For simplicity, I've created a root level file called `index.test.js`, to test my `index.js` file. The names are not required to match, but speaking for anyone who may touch your code, please _make them match_. To write your first test, you dont need to import any assertion libraries or additional utilities, simply write code using the simple test and assertion syntax. The test syntax is as follows:
+For simplicity, I've created a root level file called `index.test.js`, to test my `index.js` file. The names are not required to match, but speaking for anyone who may touch your code, please _make them match_. To write the first test, forget about importing any assertion libraries or additional utilities, simply write code using the simple test and assertion syntax. The test syntax is as follows:
 
 ```javascript
 'use strict';
@@ -43,7 +43,7 @@ test('this is the identifier for my test', () => {
 });
 ```
 
-Assertions are pretty straight forward too, if you have ever used them before. They all take the form of:
+Assertions are pretty straight forward too. They all essentially take the form of:
 ```javascript
 expect(<anything>).toBe<something>()
 ```
@@ -148,9 +148,10 @@ npm ERR! Test failed.  See above for more details.
 ### Real Example
 ---
 
-Asserting that language level constructs pass tests is pretty boring, so I've included a more in-depth example too. I've made a simple module in the sister repo, which contains a few functions for calculating the sum of the given numbers (wildly impractical).
+Asserting that language level constructs pass tests is pretty boring, so I've included a more in-depth example too. I've made a simple module in the sister repo, which contains a few functions for calculating the sum of the given numbers (wildly impractical). There are three core demonstrations, followed by their set of passing tests: pure synchronous code, promise based, and callback style.
 
 ```javascript
+// index.js
 'use strict';
 
 /**
@@ -203,6 +204,7 @@ module.exports = {
 ```
 
 ```javascript
+// index.test.js
 'use strict';
 
 const { sum, sumP, sumC } = require('./');
@@ -243,7 +245,7 @@ test('sumC of 1 with a callback returns 1', () => {
 ### Code Coverage
 ---
 
-Finally, my last favorite thing about Jest is the ease of getting code coverage. I've tried various solutions with mocha, but it always seems half baked and cumbersome to use with cool tools like [Coveralls](https://coveralls.io/). That is a thing of the past with Jest. Simply run your test suite with `--coverage` and you will get all the coverage information you couls want!
+Finally, my last favorite thing about Jest is the ease of getting code coverage. I've tried various solutions with mocha, but it always seems half baked and cumbersome to use with cool tools like [Coveralls](https://coveralls.io/). That is a thing of the past with Jest. Simply run your test suite with `--coverage` and you will get all the coverage information you could want!
 
 >Note: The CLI output is limited, but it has full lcov output in the coverage folder!
 
@@ -278,7 +280,7 @@ All files |      100 |      100 |      100 |      100 |                |
 <br>
 ### Conclusion
 ---
-As stated earlier, the aim of this post was to highlight my new favorite automated testing library. My post just scratches the surface of what Jest can do, but I may do a follow up or two to cover more. With the simplicity of getting started with Jest, there really isn't a good reason for projects having zero tests.
+As stated earlier, the aim of this post was to highlight my new favorite automated testing library. My post just scratches the surface of what Jest can do, but I may do a follow up or two and cover more. With the simplicity of getting started with Jest, there really isn't a good reason for projects having zero tests.
 
 <br>
 I hope someone found this post helpful, and as always feel free to reach out to me on
