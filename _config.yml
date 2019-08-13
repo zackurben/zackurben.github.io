@@ -5,6 +5,14 @@ baseurl: ""
 url: "http://zackurben.com"
 plugins: ["jekyll-paginate"]
 
+bio: "
+I am a Computer Scientist located in Dallas, Texas, and a Software Engineer at
+Sony. I am interested in many things, but I focus on open source, web design,
+security, and finance. I am <em><strong>passionate</strong></em> about
+programming and creating elegant solutions that follow the UNIX Philosophy.
+Curious in nature and dedicated to learning new things, I thrive on a web stack.
+"
+
 # Social Info
 email: "zackurben@gmail.com"
 twitter_profile: "https://twitter.com/zackurben"
