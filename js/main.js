@@ -43,26 +43,6 @@ window.onload = function() {
     scrollOffset = Math.abs(paddingHeight + navHeight);
   }
 
-  // Scroll to the about section on button click.
-  $('.scroll, #about-nav').click(function() {
-    $('html, body').animate({scrollTop: $('#about').offset().top - scrollOffset}, 'slow');
-  });
-
-  // Scroll to the projects section on button click.
-  $('#projects-nav').click(function() {
-    $('html, body').animate({scrollTop: $('#projects').offset().top - scrollOffset}, 'slow');
-  });
-
-  // Scroll to the contacts section on button click.
-  $('#contact-nav').click(function() {
-    $('html, body').animate({scrollTop: $('#contact').offset().top - scrollOffset}, 'slow');
-  });
-
-  // Scroll to the top of the page on reverse button click.
-  $('footer div.scroll.reverse').click(function() {
-    $('html, body').animate({scrollTop: 0}, 'fast');
-  });
-
   new Chartist.Line('.ct-chart', {
     labels: _.pluck(skills, 'type'),
     series: [

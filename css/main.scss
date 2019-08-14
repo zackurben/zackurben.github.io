@@ -85,5 +85,9 @@ $arrow-dist: 50px;
   text-align: center;
 }
 
+.flex {
+  @include flex;
+}
+
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import "h5bp-pre", "base", "h5bp-post";

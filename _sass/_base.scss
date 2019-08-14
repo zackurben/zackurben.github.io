@@ -17,6 +17,7 @@ html {
   background-size: cover;
 
   overflow-x: hidden;
+  scroll-behavior: smooth;
 
   @include micro-screen {
     font-size: round($text-body-size * 0.6);
@@ -268,34 +269,6 @@ header {
   }
 
   @include flex;
-}
-
-@-webkit-keyframes pulse {
-  0% {
-    -webkit-transform: scale(1);
-  }
-
-  50% {
-    -webkit-transform: scale(1.1);
-  }
-
-  100% {
-    -webkit-transform: scale(1);
-  }
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.1);
-  }
-
-  100% {
-    transform: scale(1);
-  }
 }
 
 .content {
