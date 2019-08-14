@@ -29,6 +29,10 @@ $max-width: 1140px;
 $min-width: 755px;
 $col-padding: 25px;
 
+// Scroll arrow
+$arrow-size: 50px;
+$arrow-dist: 50px;
+
 /*
  * Sass mixins to consolidate media query definitions.
  */
@@ -72,6 +76,13 @@ $col-padding: 25px;
   @media only screen and (min-width: 1280px) {
     @content;
   }
+}
+
+@mixin flex {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  text-align: center;
 }
 
 // Import partials from `sass_dir` (defaults to `_sass`)

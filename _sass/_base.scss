@@ -231,7 +231,34 @@ nav {
   }
 }
 
-.header {
+.arrow {
+  margin-top: 50px;
+  align-self: center;
+  border-right: $arrow-size solid transparent;
+  border-left: $arrow-size solid transparent;
+  border-top: $arrow-size solid $site-accent-color;
+  animation-duration: 3s;
+  animation-name: bounce;
+  animation-iteration-count: infinite;
+  
+  &.reversed {
+    animation-direction: reverse;
+    border-bottom: $arrow-size solid $site-accent-color;
+    border-top: unset;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    margin-top: $arrow-dist;
+  }
+
+  50% {
+    margin-top: $arrow-dist * 2;
+  }
+}
+
+header {
   padding: 20vh 0 0 0;
   height: 80vh;
   overflow: hidden;
@@ -239,6 +266,8 @@ nav {
   h1, h2, h3 {
     color: $text-secondary-color;
   }
+
+  @include flex;
 }
 
 @-webkit-keyframes pulse {
@@ -266,62 +295,6 @@ nav {
 
   100% {
     transform: scale(1);
-  }
-}
-
-.scroll {
-  margin-top: 10vh;
-  width: 100%;
-
-  -webkit-animation-duration: 3s;
-  animation-duration: 3s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-name: pulse;
-  animation-name: pulse;
-
-  img {
-    display: block;
-    margin: auto;
-
-    @include micro-screen {
-      height: round($scroll-height * 0.6);
-      width: round($scroll-width * 0.6);
-    }
-
-    @include xs-screen {
-      height: round($scroll-height * 0.7);
-      width: round($scroll-width * 0.7);
-    }
-
-    @include s-screen {
-      height: round($scroll-height * 0.8);
-      width: round($scroll-width * 0.8);
-    }
-
-    @include m-screen {
-      height: round($scroll-height * 0.9);
-      width: round($scroll-width * 0.9);
-    }
-
-    @include l-screen {
-      height: round($scroll-height);
-      width: round($scroll-width);
-    }
-  }
-
-  &.reverse {
-    img {
-      transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-      -moz-transform: rotate(180deg);
-      -webkit-transform: rotate(180deg);
-      -o-transform: rotate(180deg);
-    }
   }
 }
 
@@ -587,6 +560,8 @@ nav {
 
 footer {
   height: 40vh;
+
+  @include flex;
 }
 
 .blog-header {
