@@ -36,16 +36,9 @@ $arrow-dist: 50px;
 /*
  * Sass mixins to consolidate media query definitions.
  */
-// Micro small screens.
-@mixin micro-screen {
-  @media only screen and (max-width : 480px) {
-    @content;
-  }
-}
-
 // Extra small screens.
 @mixin xs-screen {
-  @media only screen and (min-width : 480px) {
+  @media only screen and (max-width : 480px) {
     @content;
   }
 }
@@ -71,13 +64,6 @@ $arrow-dist: 50px;
   }
 }
 
-// Extra large screens.
-@mixin xl-screen {
-  @media only screen and (min-width: 1280px) {
-    @content;
-  }
-}
-
 @mixin flex {
   display: flex;
   flex: 1 1 0;
@@ -85,8 +71,22 @@ $arrow-dist: 50px;
   text-align: center;
 }
 
-.flex {
-  @include flex;
+@mixin resize-font($font) {
+  @include xs-screen {
+    font-size: round($font * 0.6);
+  }
+
+  @include s-screen {
+    font-size: round($font * 0.8);
+  }
+
+  @include m-screen {
+    font-size: round($font * 0.9);
+  }
+
+  @include l-screen {
+    font-size: round($font);
+  }
 }
 
 // Import partials from `sass_dir` (defaults to `_sass`)

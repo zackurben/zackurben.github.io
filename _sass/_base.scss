@@ -19,25 +19,7 @@ html {
   overflow-x: hidden;
   scroll-behavior: smooth;
 
-  @include micro-screen {
-    font-size: round($text-body-size * 0.6);
-  }
-
-  @include xs-screen {
-    font-size: round($text-body-size * 0.7);
-  }
-
-  @include s-screen {
-    font-size: round($text-body-size * 0.8);
-  }
-
-  @include m-screen {
-    font-size: round($text-body-size * 0.9);
-  }
-
-  @include l-screen {
-    font-size: round($text-body-size);
-  }
+  @include resize-font($text-body-size);
 }
 
 p {
@@ -46,35 +28,13 @@ p {
   font-weight: 300 !important;
   margin: 0;
 
-  @include micro-screen {
-    font-size: round($text-body-size * 0.6);
-  }
-
-  @include xs-screen {
-    font-size: round($text-body-size * 0.7);
-  }
-
-  @include s-screen {
-    font-size: round($text-body-size * 0.8);
-  }
-
-  @include m-screen {
-    font-size: round($text-body-size * 0.9);
-  }
-
-  @include l-screen {
-    font-size: round($text-body-size);
-  }
+  @include resize-font($text-body-size);
 }
 
 h1, h2, h3 {
   margin: 0;
   color: $text-primary-color;
   font-weight: 300 !important;
-
-  @include micro-screen {
-    padding: 0 round($col-padding * 0.5) 0 round($col-padding * 0.5);
-  }
 
   @include xs-screen {
     padding: 0 round($col-padding * 0.7) 0 round($col-padding * 0.7);
@@ -94,69 +54,15 @@ h1, h2, h3 {
 }
 
 h1 {
-  @include micro-screen {
-    font-size: round($text-head-size * 0.5);
-  }
-
-  @include xs-screen {
-    font-size: round($text-head-size * 0.7);
-  }
-
-  @include s-screen {
-    font-size: round($text-head-size * 0.8);
-  }
-
-  @include m-screen {
-    font-size: round($text-head-size * 0.9);
-  }
-
-  @include l-screen {
-    font-size: round($text-head-size);
-  }
+  @include resize-font($text-head-size);
 }
 
 h2 {
-  @include micro-screen {
-    font-size: round($text-subhead-size * 0.5);
-  }
-
-  @include xs-screen {
-    font-size: round($text-subhead-size * 0.7);
-  }
-
-  @include s-screen {
-    font-size: round($text-subhead-size * 0.8);
-  }
-
-  @include m-screen {
-    font-size: round($text-subhead-size * 0.9);
-  }
-
-  @include l-screen {
-    font-size: round($text-subhead-size);
-  }
+  @include resize-font($text-subhead-size);
 }
 
 h3 {
-  @include micro-screen {
-    font-size: round($text-subsubhead-size * 0.5);
-  }
-
-  @include xs-screen {
-    font-size: round($text-subsubhead-size * 0.7);
-  }
-
-  @include s-screen {
-    font-size: round($text-subsubhead-size * 0.8);
-  }
-
-  @include m-screen {
-    font-size: round($text-subsubhead-size * 0.9);
-  }
-
-  @include l-screen {
-    font-size: round($text-subsubhead-size);
-  }
+  @include resize-font($text-subsubhead-size);
 }
 
 i {
@@ -180,10 +86,6 @@ nav {
   background-color: $site-accent-color;
   text-align: right !important;
 
-  @include micro-screen {
-    padding: round($nav-padding * 0.5);
-  }
-
   @include xs-screen {
     padding: round($nav-padding * 0.7);
   }
@@ -205,31 +107,27 @@ nav {
     text-decoration: none;
     cursor: pointer !important;
 
-    @include micro-screen {
-      padding-right: round($nav-spacing * 0.5);
-      font-size: round($text-body-size * 0.5);
-    }
-
+    @include resize-font($text-body-size);
     @include xs-screen {
       padding-right: round($nav-spacing * 0.7);
-      font-size: round($text-body-size * 0.7);
     }
 
     @include s-screen {
       padding-right: round($nav-spacing * 0.8);
-      font-size: round($text-body-size * 0.8);
     }
 
     @include m-screen {
       padding-right: round($nav-spacing * 0.9);
-      font-size: round($text-body-size * 0.9);
     }
 
     @include l-screen {
       padding-right: round($nav-spacing);
-      font-size: round($text-body-size);
     }
   }
+}
+
+.flex {
+  @include flex;
 }
 
 .arrow {
@@ -278,10 +176,6 @@ header {
 
   &:nth-child(odd) {
     background-color: $site-secondary-color;
-  }
-
-  @include micro-screen {
-    padding: round($content-padding * 0.15) 0 round($content-padding * 0.15) 0;
   }
 
   @include xs-screen {
@@ -390,14 +284,6 @@ header {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-
-  @include micro-screen {
-    &.right {
-      text-align: left;
-    }
-
-    padding: round($col-padding * 0.5);
-  }
 
   @include xs-screen {
     padding: round($col-padding * 0.7);
@@ -514,21 +400,6 @@ header {
 
 .off-1 {
   margin-left: 8.3333333%;
-}
-
-/**
- * Grid layout for small screens.
- */
-@include micro-screen {
-  .col-12, .col-11, .col-10, .col-9, .col-8, .col-7,
-  .col-6, .col-5, .col-4, .col-3, .col-2, .col-1 {
-    width: 100%;
-  }
-
-  .off-12, .off-11, .off-10, .off-9, .off-8, .off-7,
-  .off-6, .off-5, .off-4, .off-3, .off-2, .off-1 {
-    margin-left: 0;
-  }
 }
 
 footer {
