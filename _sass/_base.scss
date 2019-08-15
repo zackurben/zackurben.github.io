@@ -1,6 +1,4 @@
-/**
- * Custom styles.
- */
+/* change fonts */
 * {
   color: $text-primary-color;
   font-family: 'Open Sans', sans-serif;
@@ -9,7 +7,6 @@
 
 html {
   background: url('../img/dallas.jpg');
-
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -47,8 +44,6 @@ h3 {
 }
 
 i {
-  color: $text-primary-color;
-
   &:hover {
     color: $text-secondary-color;
   }
