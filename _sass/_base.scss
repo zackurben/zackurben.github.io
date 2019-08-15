@@ -22,6 +22,23 @@ html {
   @include resize-font($text-body-size);
 }
 
+.max {
+  height: 100vh;
+}
+
+header {
+  // padding: 20vh 0 0 0;
+  // height: 80vh;
+  overflow: hidden;
+
+  h1, h2, h3 {
+    color: $text-secondary-color;
+  }
+
+  @include flex;
+}
+
+
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;
   padding: 0;
@@ -32,6 +49,8 @@ p {
 }
 
 h1 {
+  padding: 10vh 0 0 0;
+
   @include resize-font($text-head-size);
 }
 
@@ -109,18 +128,6 @@ nav {
   50% {
     margin-top: $arrow-dist * 2;
   }
-}
-
-header {
-  padding: 20vh 0 0 0;
-  height: 80vh;
-  overflow: hidden;
-
-  h1, h2, h3 {
-    color: $text-secondary-color;
-  }
-
-  @include flex;
 }
 
 .content {
