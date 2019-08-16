@@ -26,9 +26,11 @@ html {
   height: 100vh;
 }
 
+body {
+  @include flex;
+}
+
 header {
-  // padding: 20vh 0 0 0;
-  // height: 80vh;
   overflow: hidden;
 
   h1, h2, h3 {
@@ -131,27 +133,52 @@ nav {
 }
 
 .content {
-  padding: $content-padding 0 $content-padding 0;
-  width: 100%;
+  @include flex;
+
+  padding: round($content-padding/2);
   background-color: $site-primary-color;
 
   &:nth-child(odd) {
     background-color: $site-secondary-color;
   }
+
+  .row, .col {
+    @include flex;
+
+    div {
+      @include flex;
+
+      padding: round($content-padding/4);
+      justify-content: center;
+    }
+
+    .profile {
+      display: block;
+
+      img {
+        border: $site-accent-color;
+        border-width: 7px;
+        // border-radius: 21px;
+        border-style: solid;
+        box-sizing: border-box;
+  
+        max-width: 20vw;
+        height: auto;
+      }
+    }
+  }
+
+  .col {
+    flex-direction: column !important;
+  }
+
+  .row {
+    flex-direction: row !important;
+  }
 }
 
-.profile {
-  border: $site-accent-color;
-  border-width: 7px;
-  border-radius: 21px;
-  border-style: solid;
-
-  width: 100%;
-  height: 100%;
-
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+.ct-chart {
+  @include flex;
 }
 
 .ct-series-a {
@@ -184,167 +211,15 @@ nav {
   transform: rotate(30deg) translateY(20px);
 }
 
-.ct-legend {
-  .professional {
-    color: rgba(29, 29, 29, 1)
-  }
-  .personal {
-    color: rgba(27, 188, 155, 1);
-  }
+.professional {
+  color: rgba(29, 29, 29, 1)
 }
-
-// Alignment stuff.
-.left {
-  text-align: left;
-}
-
-.right {
-  text-align: right;
-}
-
-.center {
-  text-align: center;
-}
-
-.float-left {
-  float: left !important;
-}
-
-.float-right {
-  float: right !important;
-}
-
-/**
- * Simple content grid.
- */
-.row {
-  width: 100%;
-  max-width: 1024px;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-[class*='col-'] {
-  float: left;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-
-  @include xs-screen {
-    padding: round($col-padding * 0.7);
-  }
-
-  @include s-screen {
-    padding: round($col-padding * 0.8);
-  }
-
-  @include m-screen {
-    padding: round($col-padding * 0.9);
-  }
-
-  @include l-screen {
-    padding: round($col-padding);
-  }
+.personal {
+  color: rgba(27, 188, 155, 1);
 }
 
 .thin {
   padding: 0;
-}
-
-.col-12 {
-  width: 100%;
-}
-
-.col-11 {
-  width: 91.6666667%;
-}
-
-.col-10 {
-  width: 83.3333333%;
-}
-
-.col-9 {
-  width: 75%;
-}
-
-.col-8 {
-  width: 66.6666667%;
-}
-
-.col-7 {
-  width: 58.3333333%;
-}
-
-.col-6 {
-  width: 50%;
-}
-
-.col-5 {
-  width: 41.6666667%;
-}
-
-.col-4 {
-  width: 33.3333333%;
-}
-
-.col-3 {
-  width: 25%;
-}
-
-.col-2 {
-  width: 16.6666667%;
-}
-
-.col-1 {
-  width: 8.3333333%;
-}
-
-.off-12 {
-  margin-left: 100%;
-}
-
-.off-11 {
-  margin-left: 91.6666667%;
-}
-
-.off-10 {
-  margin-left: 83.3333333%;
-}
-
-.off-9 {
-  margin-left: 75%;
-}
-
-.off-8 {
-  margin-left: 66.6666667%;
-}
-
-.off-7 {
-  margin-left: 58.3333333%;
-}
-
-.off-6 {
-  margin-left: 50%;
-}
-
-.off-5 {
-  margin-left: 41.6666667%;
-}
-
-.off-4 {
-  margin-left: 33.3333333%;
-}
-
-.off-3 {
-  margin-left: 25%;
-}
-
-.off-2 {
-  margin-left: 16.6666667%;
-}
-
-.off-1 {
-  margin-left: 8.3333333%;
 }
 
 footer {

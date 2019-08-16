@@ -2,34 +2,28 @@
 layout: default
 ---
 <div class="content" id="about">
-  <div class="row center">
-    <h2>About</h2>
-  </div>
+  <h2>About</h2>
   <div class="row">
-    <div class="col-4">
-      <img class="profile" src="/img/zack.jpeg">
+    <div class="profile">
+      <img src="/img/zack.jpeg">
     </div>
-    <div class="col-8">
-      {{ site.bio }}
+    <div>
+      <span>{{ site.bio }}</span>
     </div>
   </div>
 </div>
 <div class="content" id="skills">
-  <div class="row center">
-    <h2>Skills</h2>
-  </div>
+  <h2>Skills</h2>
   <div class="row">
-    <div class="col-12">
+    <div class="col">
       <div class="row">
-        <div class="col-12 pull-left">
-          <div class="ct-legend pull-left">
-            <i class="fa fa-area-chart personal"></i>&nbsp;Personal<br>
-            <i class="fa fa-area-chart professional"></i>&nbsp;Professional
-          </div>
-        </div>
+        <i class="fa fa-area-chart personal"></i>&nbsp;Personal
       </div>
-      <div class="ct-chart ct-major-twelfth" width="auto" height="auto"></div>
+      <div>
+        <i class="fa fa-area-chart professional"></i>&nbsp;Professional
+      </div>
     </div>
+    <div class="ct-chart ct-major-twelfth" width="auto" height="auto"></div>
   </div>
 </div>
 <div class="content" id="projects">
