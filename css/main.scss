@@ -3,58 +3,41 @@
 ---
 @charset "utf-8";
 
-// Site template colors.
-$site-accent-color: #1bbc9b;
-$site-primary-color: #ffffff;
-$site-secondary-color: #eeeeee;
+// Colors
+$accent-color: #1bbc9b;
+$primary-color: #ffffff;
+$secondary-color: #eeeeee;
+$text-color: #1d1d1d;
 
-// Text settings.
-$text-primary-color: #1d1d1d;
-$text-secondary-color: #1bbc9b;
-$text-head-size: 96px;
-$text-subhead-size: 48px;
-$text-subsubhead-size: 36px;
+// Text
 $text-body-size: 24px;
 
 // Layout settings
 $nav-padding: 20px;
-$nav-spacing: 50px;
 $content-padding: 100px;
-
-// Grid settings.
-$max-width: 1140px;
-$min-width: 755px;
-$col-padding: 25px;
 
 // Scroll arrow
 $arrow-size: 50px;
 $arrow-dist: 50px;
 
-/*
- * Sass mixins to consolidate media query definitions.
- */
-// Extra small screens.
 @mixin xs-screen {
   @media only screen and (max-width : 480px) {
     @content;
   }
 }
 
-// Small screens.
 @mixin s-screen {
   @media only screen and (min-width : 768px) {
     @content;
   }
 }
 
-// Medium screens.
 @mixin m-screen {
   @media only screen and (min-width: 1024px) {
     @content;
   }
 }
 
-// Large screens.
 @mixin l-screen {
   @media only screen and (min-width: 1280px) {
     @content;

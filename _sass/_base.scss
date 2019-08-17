@@ -1,5 +1,5 @@
 * {
-  color: $text-primary-color;
+  color: $text-color;
   font-family: 'Open Sans', sans-serif;
 
   :not(strong) {
@@ -33,10 +33,6 @@ body, header, footer {
 
 header {
   height: 100vh;
-
-  h1, h2, h3 {
-    color: $text-secondary-color;
-  }
 }
 
 footer {
@@ -47,6 +43,10 @@ h1, h2, h3, h4, h5, h6, p {
   text-align: center;
   margin: 0;
   padding: 0;
+
+  &.alt {
+    color: $accent-color;
+  }
 }
 
 p {
@@ -54,27 +54,27 @@ p {
 }
 
 h1 {
-  padding: 10vh 0 0 0;
+  padding: 20vh 0 0 0;
 
-  @include resize-font($text-head-size);
+  @include resize-font($text-body-size * 4);
 }
 
 h2 {
-  @include resize-font($text-subhead-size);
+  @include resize-font($text-body-size * 2);
 }
 
 h3 {
-  @include resize-font($text-subsubhead-size);
+  @include resize-font($text-body-size * 1.5);
 }
 
 i {
   &:hover {
-    color: $text-secondary-color;
+    color: $accent-color;
   }
 }
 
 a {
-  color: $site-accent-color;
+  color: $accent-color;
 }
 
 nav {
@@ -83,7 +83,7 @@ nav {
   position: fixed;
   width: 100%;
   height: auto;
-  background-color: $site-accent-color;
+  background-color: $accent-color;
 
   @include flex;
   flex-direction: row;
@@ -96,7 +96,7 @@ nav {
     }
 
     padding: round($nav-padding * 0.9);
-    color: $text-primary-color;
+    color: $text-color;
     text-decoration: none;
     cursor: pointer !important;
 
@@ -113,14 +113,14 @@ nav {
   align-self: center;
   border-right: $arrow-size solid transparent;
   border-left: $arrow-size solid transparent;
-  border-top: $arrow-size solid $site-accent-color;
+  border-top: $arrow-size solid $accent-color;
   animation-duration: 3s;
   animation-name: bounce;
   animation-iteration-count: infinite;
   
   &.reversed {
     animation-direction: reverse;
-    border-bottom: $arrow-size solid $site-accent-color;
+    border-bottom: $arrow-size solid $accent-color;
     border-top: unset;
   }
 }
@@ -150,10 +150,10 @@ nav {
   @include flex;
   flex-direction: column;
   padding: round($content-padding/2);
-  background-color: $site-primary-color;
+  background-color: $primary-color;
 
   &:nth-child(odd) {
-    background-color: $site-secondary-color;
+    background-color: $secondary-color;
   }
 
   .row {
@@ -170,7 +170,7 @@ nav {
 }
 
 .profile {
-  border: $site-accent-color;
+  border: $accent-color;
   border-width: 7px;
   // border-radius: 21px;
   border-style: solid;
@@ -231,5 +231,5 @@ nav {
 }
 
 .blog-list-item {
-  background-color: $site-secondary-color;
+  background-color: $secondary-color;
 }
