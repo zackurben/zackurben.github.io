@@ -25,13 +25,14 @@ html {
   @include resize-font($text-body-size);
 }
 
+body {
+  @include flex;
+  flex-direction: column;
+}
+
 .center {
   text-align: center;
   align-self: center;
-}
-
-body {
-  @include flex;
 }
 
 header {
