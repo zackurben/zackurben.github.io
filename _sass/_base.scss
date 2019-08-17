@@ -137,15 +137,14 @@ nav {
 }
 
 .col {
-  display: flex;
-  flex: 1 1;
+  @include flex;
   flex-direction: column;
 }
 
 .row {
-  display: flex;
-  // flex: 1 1;
+  @include flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .content {
