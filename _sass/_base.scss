@@ -25,14 +25,11 @@ html {
   @include resize-font($text-body-size);
 }
 
-body {
-  @include flex;
+body, header, footer {
+  overflow: hidden;
+  display: flex;
+  flex: 1 1 auto;
   flex-direction: column;
-}
-
-.center {
-  text-align: center;
-  align-self: center;
 }
 
 header {
@@ -41,12 +38,11 @@ header {
   h1, h2, h3 {
     color: $text-secondary-color;
   }
-
-  display: flex;
-  flex: 1 1 auto;
-  flex-direction: column;
 }
 
+footer {
+  height: 40vh;
+}
 
 h1, h2, h3, h4, h5, h6, p {
   text-align: center;
@@ -141,16 +137,20 @@ nav {
 }
 
 .col {
+  display: flex;
+  flex: 1 1;
   flex-direction: column;
 }
 
 .row {
+  display: flex;
+  // flex: 1 1;
   flex-direction: row;
 }
 
 .content {
   @include flex;
-
+  flex-direction: column;
   padding: round($content-padding/2);
   background-color: $site-primary-color;
 
@@ -158,31 +158,28 @@ nav {
     background-color: $site-secondary-color;
   }
 
-  .row, .col {
-    @include flex;
-
-    div {
-      @include flex;
-
+  .row {
+    .col {
+      &:first-child {
+        flex: 1 2;
+      }
+  
+      flex: 2 1;
       padding: round($content-padding/4);
       justify-content: center;
     }
-
-    .profile {
-      display: block;
-
-      img {
-        border: $site-accent-color;
-        border-width: 7px;
-        // border-radius: 21px;
-        border-style: solid;
-        box-sizing: border-box;
-  
-        max-width: 20vw;
-        height: auto;
-      }
-    }
   }
+}
+
+.profile {
+  border: $site-accent-color;
+  border-width: 7px;
+  // border-radius: 21px;
+  border-style: solid;
+  box-sizing: border-box;
+
+  max-width: 20vw;
+  height: auto;
 }
 
 .ct-chart {
@@ -228,12 +225,6 @@ nav {
 
 .thin {
   padding: 0;
-}
-
-footer {
-  height: 40vh;
-
-  @include flex;
 }
 
 .blog-header {

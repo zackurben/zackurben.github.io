@@ -1,13 +1,13 @@
 ---
 layout: default
 ---
-<div class="content col" id="about">
+<div class="content" id="about">
   <h2>About</h2>
   <div class="row">
-    <div class="profile">
-      <img src="/img/zack.jpeg">
+    <div class="col">
+      <img class="profile" src="/img/zack.jpeg">
     </div>
-    <div>
+    <div class="col">
       <span>{{ site.bio }}</span>
     </div>
   </div>
@@ -127,11 +127,11 @@ layout: default
   {% endfor %}
 </div>
 <div class="content" id="contact">
-  <div class="row center">
+  <div class="row">
     <h2>Contact</h2>
   </div>
   <div class="row">
-    <div class="col-12 center">
+    <div class="col-12">
       <a href="mailto:{{ site.email }}" target="_blank"><i class="fa fa-envelope-square fa-5x"></i></a>&nbsp;
       <a href="{{ site.github_profile }}" target="_blank"><i class="fa fa-github-square fa-5x"></i></a>&nbsp;
       <a href="{{ site.linkedin_profile }}" target="_blank"><i class="fa fa-linkedin-square fa-5x"></i></a>&nbsp;
