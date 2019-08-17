@@ -2,7 +2,10 @@
 * {
   color: $text-primary-color;
   font-family: 'Open Sans', sans-serif;
-  font-weight: 300 !important;
+
+  :not(strong) {
+    font-weight: 300 !important;
+  }
 }
 
 html {
@@ -22,8 +25,9 @@ html {
   @include resize-font($text-body-size);
 }
 
-.max {
-  height: 100vh;
+.center {
+  text-align: center;
+  align-self: center;
 }
 
 body {
@@ -31,17 +35,20 @@ body {
 }
 
 header {
-  overflow: hidden;
+  height: 100vh;
 
   h1, h2, h3 {
     color: $text-secondary-color;
   }
 
-  @include flex;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
 }
 
 
 h1, h2, h3, h4, h5, h6, p {
+  text-align: center;
   margin: 0;
   padding: 0;
 }
@@ -132,6 +139,14 @@ nav {
   }
 }
 
+.col {
+  flex-direction: column;
+}
+
+.row {
+  flex-direction: row;
+}
+
 .content {
   @include flex;
 
@@ -166,14 +181,6 @@ nav {
         height: auto;
       }
     }
-  }
-
-  .col {
-    flex-direction: column !important;
-  }
-
-  .row {
-    flex-direction: row !important;
   }
 }
 
