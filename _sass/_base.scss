@@ -174,25 +174,32 @@ svg {
   height: auto;
 }
 
+.professional {
+  color: $text-color;
+}
+.personal {
+  color: $accent-color;
+}
+
 .ct-series-a {
   .ct-point,
   .ct-line {
-    stroke: rgba(27, 188, 155, 1);
+    stroke: $accent-color;
   }
   .ct-area {
     fill-opacity: 1;
-    fill: rgba(27, 188, 155, 0.5);
+    fill: adjust-color($accent-color, $alpha: -0.5);
   }
 }
 
 .ct-series-b {
   .ct-point,
   .ct-line {
-    stroke: rgba(29, 29, 29, 1);
+    stroke: $text-color;
   }
   .ct-area {
     fill-opacity: 1;
-    fill: rgba(29, 29, 29, 0.5);
+    fill: adjust-color($text-color, $alpha: -0.5);
   }
 }
 
@@ -204,13 +211,6 @@ svg {
     -ms-transform: rotate(30deg) translateY($nav-padding * 1.5);
     transform: rotate(30deg) translateY($nav-padding * 1.5);
   }
-}
-
-.professional {
-  color: rgba(29, 29, 29, 1)
-}
-.personal {
-  color: rgba(27, 188, 155, 1);
 }
 
 .center {
