@@ -44,11 +44,6 @@ $arrow-dist: 50px;
   }
 }
 
-@mixin flex {
-  display: flex;
-  flex: 1 1;
-}
-
 @mixin resize-font($font) {
   @include xs-screen {
     font-size: round($font * 0.6);
