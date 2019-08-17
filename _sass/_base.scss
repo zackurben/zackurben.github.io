@@ -68,6 +68,14 @@ a {
   color: $accent-color;
 }
 
+small {
+  font-size: 0.8em;
+
+  a {
+    font-size: 1em;
+  }
+}
+
 nav {
   z-index: 1;
   position: fixed;
