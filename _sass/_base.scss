@@ -88,6 +88,10 @@ nav {
   }
 }
 
+svg {
+  overflow: visible !important;
+}
+
 .arrow {
   margin-top: 50px;
   align-self: center;
@@ -162,11 +166,6 @@ nav {
   height: auto;
 }
 
-.ct-chart {
-  display: flex;
-  flex: 1 1;
-}
-
 .ct-series-a {
   .ct-point,
   .ct-line {
@@ -189,12 +188,14 @@ nav {
   }
 }
 
-.ct-label.ct-horizontal.ct-end {
-  -moz-transform: rotate(30deg) translateY(20px);
-  -webkit-transform: rotate(30deg) translateY(20px);
-  -o-transform: rotate(30deg) translateY(20px);
-  -ms-transform: rotate(30deg) translateY(20px);
-  transform: rotate(30deg) translateY(20px);
+.ct-label {
+  &.ct-end {
+    -moz-transform: rotate(30deg) translateY($nav-padding * 1.5);
+    -webkit-transform: rotate(30deg) translateY($nav-padding * 1.5);
+    -o-transform: rotate(30deg) translateY($nav-padding * 1.5);
+    -ms-transform: rotate(30deg) translateY($nav-padding * 1.5);
+    transform: rotate(30deg) translateY($nav-padding * 1.5);
+  }
 }
 
 .professional {
