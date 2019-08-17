@@ -1,4 +1,3 @@
-/* change fonts */
 * {
   color: $text-primary-color;
   font-family: 'Open Sans', sans-serif;
@@ -222,8 +221,8 @@ nav {
   color: rgba(27, 188, 155, 1);
 }
 
-.thin {
-  padding: 0;
+.center {
+  align-self: center;
 }
 
 .blog-header {
