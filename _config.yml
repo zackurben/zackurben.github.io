@@ -20,6 +20,48 @@ github_profile: "https://github.com/zackurben"
 linkedin_profile: "https://www.linkedin.com/in/zackurben"
 
 projects:
+  - name: "NETWORK HELL"
+    client: "General Public"
+    project: "Web Application"
+    team:
+      - name: "Zack Urben"
+        link: "#"
+      - name: "Jon Darling"
+        link: "http://jmdarling.com/"
+    link:
+      - label: "GitHub"
+        link: "https://github.com/zackurben/js13k-2018"
+      - label: "js13kgames"
+        link: "https://js13kgames.com/entries/network-hell"
+    tech:
+      - label: "Node.js"
+        link: "http://nodejs.org/"
+      - label: "webpack"
+        link: "https://webpack.js.org/"
+    about: "NETWORK HELL is a game designed for <a href=\"https://js13kgames.com\">JS13kGames</a>, and the final
+            submission can be found <a href=\"https://js13kgames.com/entries/network-hell\">here</a>.
+            In Network Hell, you play the role of a request traveling back up the
+            [OSI Stack](https://en.wikipedia.org/wiki/OSI_model) to try and connect to the outside world.
+            Move quickly and pickup packets along the way to provide data to your consumer with the least
+            response time. The entire game source fits within 13k and is an open source project under the MIT license"
+  - name: "AlphaVantage"
+    client: "General Public"
+    project: "NPM Module"
+    team:
+      - name: "Zack Urben"
+        link: "#"
+    link:
+      - label: "GitHub"
+        link: "https://github.com/zackurben/alphavantage"
+      - label: "NPM"
+        link: "https://www.npmjs.com/package/alphavantage"
+    tech:
+      - label: "Node.js"
+        link: "http://nodejs.org/"
+    about: "AlphaVantage is a free online resource for realtime and historical stock information. As an early
+            adopter of the service, I created the first npm package. This is an extensive implementation of
+            the service, including automated tests, which includes support for all of the API endpoints and a
+            few utilities for data normalization. The npm module is an open source project under the MIT license"
   - name: "VacationRoulette"
     client: "General Public"
     project: "Web Application"
@@ -73,10 +115,8 @@ projects:
         link: "http://modernizr.com/"
     about: "My profile website is the test bed that enables me to learn new technology. For this website, I created just
            about everything, from the design to the custom grid. I wanted to make a static website where I could play
-           curator for my living resume. I deployed Jekyll to create static pages, so I could harness the power of its
-           templating engine, and in the future, its blogging platform. The main motivation behind this project, other
-           than purely having a portfolio website, was to get more acquainted with front end development. I used Sass to
-           better design a responsive project with more dynamic break points for a given display."
+           curator for my living resume. I deployed Jekyll to create static pages, so I could harness both the power of
+           its templating engine and blogging platform."
   - name: "EZEDIT"
     client: "General Public"
     project: "Platform As A Service (PAAS)"
