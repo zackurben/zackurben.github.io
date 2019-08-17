@@ -28,7 +28,12 @@ body, header, footer {
 }
 
 header {
-  height: 100vh;
+  &:not(#top) {
+    height: 100vh
+  }
+  span {
+    padding: round($nav-padding * 0.9);
+  }
 }
 
 footer {
@@ -140,6 +145,11 @@ svg {
 }
 
 .content {
+  &.blog {
+    width: 70vw;
+    align-self: center;
+  }
+
   display: flex;
   flex: 1 1;
   flex-direction: column;
@@ -152,7 +162,7 @@ svg {
 
   .row {
     .col {
-      &:first-child {
+      &:first-child, &:nth-child(3) {
         flex: 1 2;
       }
   
@@ -215,13 +225,10 @@ svg {
 
 .center {
   align-self: center;
+  text-align: center;
 }
 
 .blog-header {
   padding: 66px 0 0 0;
   overflow: hidden;
-}
-
-.blog-list-item {
-  background-color: $secondary-color;
 }
