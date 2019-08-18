@@ -1,12 +1,10 @@
-/**
- * Custom styles.
- */
-html {
-  color: $text-primary-color;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300 !important;
-  background: url('../img/dallas.jpg');
+* {
+  color: $text-color;
+  @include resize-font($text-body-size);
+}
 
+html {
+  background: url('../img/dallas.jpg');
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -17,571 +15,24 @@ html {
   background-size: cover;
 
   overflow-x: hidden;
-
-  @include micro-screen {
-    font-size: round($text-body-size * 0.6);
-  }
-
-  @include xs-screen {
-    font-size: round($text-body-size * 0.7);
-  }
-
-  @include s-screen {
-    font-size: round($text-body-size * 0.8);
-  }
-
-  @include m-screen {
-    font-size: round($text-body-size * 0.9);
-  }
-
-  @include l-screen {
-    font-size: round($text-body-size);
-  }
+  scroll-behavior: smooth;
 }
 
-p {
-  color: $text-primary-color;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300 !important;
-  margin: 0;
-
-  @include micro-screen {
-    font-size: round($text-body-size * 0.6);
-  }
-
-  @include xs-screen {
-    font-size: round($text-body-size * 0.7);
-  }
-
-  @include s-screen {
-    font-size: round($text-body-size * 0.8);
-  }
-
-  @include m-screen {
-    font-size: round($text-body-size * 0.9);
-  }
-
-  @include l-screen {
-    font-size: round($text-body-size);
-  }
-}
-
-h1, h2, h3 {
-  margin: 0;
-  color: $text-primary-color;
-  font-weight: 300 !important;
-
-  @include micro-screen {
-    padding: 0 round($col-padding * 0.5) 0 round($col-padding * 0.5);
-  }
-
-  @include xs-screen {
-    padding: 0 round($col-padding * 0.7) 0 round($col-padding * 0.7);
-  }
-
-  @include s-screen {
-    padding: 0 round($col-padding * 0.8) 0 round($col-padding * 0.8);
-  }
-
-  @include m-screen {
-    padding: 0 round($col-padding * 0.9) 0 round($col-padding * 0.9);
-  }
-
-  @include l-screen {
-    padding: 0 round($col-padding) 0 round($col-padding);
-  }
-}
-
-h1 {
-  @include micro-screen {
-    font-size: round($text-head-size * 0.5);
-  }
-
-  @include xs-screen {
-    font-size: round($text-head-size * 0.7);
-  }
-
-  @include s-screen {
-    font-size: round($text-head-size * 0.8);
-  }
-
-  @include m-screen {
-    font-size: round($text-head-size * 0.9);
-  }
-
-  @include l-screen {
-    font-size: round($text-head-size);
-  }
-}
-
-h2 {
-  @include micro-screen {
-    font-size: round($text-subhead-size * 0.5);
-  }
-
-  @include xs-screen {
-    font-size: round($text-subhead-size * 0.7);
-  }
-
-  @include s-screen {
-    font-size: round($text-subhead-size * 0.8);
-  }
-
-  @include m-screen {
-    font-size: round($text-subhead-size * 0.9);
-  }
-
-  @include l-screen {
-    font-size: round($text-subhead-size);
-  }
-}
-
-h3 {
-  @include micro-screen {
-    font-size: round($text-subsubhead-size * 0.5);
-  }
-
-  @include xs-screen {
-    font-size: round($text-subsubhead-size * 0.7);
-  }
-
-  @include s-screen {
-    font-size: round($text-subsubhead-size * 0.8);
-  }
-
-  @include m-screen {
-    font-size: round($text-subsubhead-size * 0.9);
-  }
-
-  @include l-screen {
-    font-size: round($text-subsubhead-size);
-  }
-}
-
-i {
-  color: $text-primary-color;
-
-  &:hover {
-    color: $text-secondary-color;
-  }
-}
-
-a {
-  color: $site-accent-color;
-}
-
-nav {
-  z-index: 1;
-  top: 0;
-  position: fixed;
-  width: 100%;
-  height: auto;
-  background-color: $site-accent-color;
-  text-align: right !important;
-
-  @include micro-screen {
-    padding: round($nav-padding * 0.5);
-  }
-
-  @include xs-screen {
-    padding: round($nav-padding * 0.7);
-  }
-
-  @include s-screen {
-    padding: round($nav-padding * 0.8);
-  }
-
-  @include m-screen {
-    padding: round($nav-padding * 0.9);
-  }
-
-  @include l-screen {
-    padding: round($nav-padding);
-  }
-
-  a {
-    color: $text-primary-color;
-    text-decoration: none;
-    cursor: pointer !important;
-
-    @include micro-screen {
-      padding-right: round($nav-spacing * 0.5);
-      font-size: round($text-body-size * 0.5);
-    }
-
-    @include xs-screen {
-      padding-right: round($nav-spacing * 0.7);
-      font-size: round($text-body-size * 0.7);
-    }
-
-    @include s-screen {
-      padding-right: round($nav-spacing * 0.8);
-      font-size: round($text-body-size * 0.8);
-    }
-
-    @include m-screen {
-      padding-right: round($nav-spacing * 0.9);
-      font-size: round($text-body-size * 0.9);
-    }
-
-    @include l-screen {
-      padding-right: round($nav-spacing);
-      font-size: round($text-body-size);
-    }
-  }
-}
-
-.header {
-  padding: 20vh 0 0 0;
-  height: 80vh;
+body, header, footer {
   overflow: hidden;
-
-  h1, h2, h3 {
-    color: $text-secondary-color;
-  }
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
 }
 
-@-webkit-keyframes pulse {
-  0% {
-    -webkit-transform: scale(1);
-  }
-
-  50% {
-    -webkit-transform: scale(1.1);
+header {
+  &:not(#top) {
+    height: 100vh
   }
 
-  100% {
-    -webkit-transform: scale(1);
-  }
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.1);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
-.scroll {
-  margin-top: 10vh;
-  width: 100%;
-
-  -webkit-animation-duration: 3s;
-  animation-duration: 3s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-name: pulse;
-  animation-name: pulse;
-
-  img {
-    display: block;
-    margin: auto;
-
-    @include micro-screen {
-      height: round($scroll-height * 0.6);
-      width: round($scroll-width * 0.6);
-    }
-
-    @include xs-screen {
-      height: round($scroll-height * 0.7);
-      width: round($scroll-width * 0.7);
-    }
-
-    @include s-screen {
-      height: round($scroll-height * 0.8);
-      width: round($scroll-width * 0.8);
-    }
-
-    @include m-screen {
-      height: round($scroll-height * 0.9);
-      width: round($scroll-width * 0.9);
-    }
-
-    @include l-screen {
-      height: round($scroll-height);
-      width: round($scroll-width);
-    }
-  }
-
-  &.reverse {
-    img {
-      transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-      -moz-transform: rotate(180deg);
-      -webkit-transform: rotate(180deg);
-      -o-transform: rotate(180deg);
-    }
-  }
-}
-
-.content {
-  padding: 80px 0 80px 0;
-  width: 100%;
-  background-color: $site-primary-color;
-
-  &:nth-child(odd) {
-    background-color: $site-secondary-color;
-  }
-
-  @include micro-screen {
-    padding: round($content-padding * 0.15) 0 round($content-padding * 0.15) 0;
-  }
-
-  @include xs-screen {
-    padding: round($content-padding * 0.25) 0 round($content-padding * 0.25) 0;
-  }
-
-  @include s-screen {
-    padding: round($content-padding * 0.5) 0 round($content-padding * 0.5) 0;
-  }
-
-  @include m-screen {
-    padding: round($content-padding * 0.75) 0 round($content-padding * 0.75) 0;
-  }
-
-  @include l-screen {
-    padding: $content-padding 0 $content-padding 0;
-  }
-}
-
-.profile {
-  border: $site-accent-color;
-  border-width: 7px;
-  border-radius: 21px;
-  border-style: solid;
-
-  width: 100%;
-  height: 100%;
-
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.ct-series-a {
-  .ct-point,
-  .ct-line {
-    stroke: rgba(27, 188, 155, 1);
-  }
-  .ct-area {
-    fill-opacity: 1;
-    fill: rgba(27, 188, 155, 0.5);
-  }
-}
-
-.ct-series-b {
-  .ct-point,
-  .ct-line {
-    stroke: rgba(29, 29, 29, 1);
-  }
-  .ct-area {
-    fill-opacity: 1;
-    fill: rgba(29, 29, 29, 0.5);
-  }
-}
-
-.ct-label.ct-horizontal.ct-end {
-  -moz-transform: rotate(30deg) translateY(20px);
-  -webkit-transform: rotate(30deg) translateY(20px);
-  -o-transform: rotate(30deg) translateY(20px);
-  -ms-transform: rotate(30deg) translateY(20px);
-  transform: rotate(30deg) translateY(20px);
-}
-
-.ct-legend {
-  .professional {
-    color: rgba(29, 29, 29, 1)
-  }
-  .personal {
-    color: rgba(27, 188, 155, 1);
-  }
-}
-
-// Alignment stuff.
-.left {
-  text-align: left;
-}
-
-.right {
-  text-align: right;
-}
-
-.center {
-  text-align: center;
-}
-
-.float-left {
-  float: left !important;
-}
-
-.float-right {
-  float: right !important;
-}
-
-/**
- * Simple content grid.
- */
-.row {
-  width: 100%;
-  max-width: 1024px;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-[class*='col-'] {
-  float: left;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-
-  @include micro-screen {
-    &.right {
-      text-align: left;
-    }
-
-    padding: round($col-padding * 0.5);
-  }
-
-  @include xs-screen {
-    padding: round($col-padding * 0.7);
-  }
-
-  @include s-screen {
-    padding: round($col-padding * 0.8);
-  }
-
-  @include m-screen {
-    padding: round($col-padding * 0.9);
-  }
-
-  @include l-screen {
-    padding: round($col-padding);
-  }
-}
-
-.thin {
-  padding: 0;
-}
-
-.col-12 {
-  width: 100%;
-}
-
-.col-11 {
-  widows: 91.6666667%;
-}
-
-.col-10 {
-  width: 83.3333333%;
-}
-
-.col-9 {
-  width: 75%;
-}
-
-.col-8 {
-  width: 66.6666667%;
-}
-
-.col-7 {
-  width: 58.3333333%;
-}
-
-.col-6 {
-  width: 50%;
-}
-
-.col-5 {
-  width: 41.6666667%;
-}
-
-.col-4 {
-  width: 33.3333333%;
-}
-
-.col-3 {
-  width: 25%;
-}
-
-.col-2 {
-  width: 16.6666667%;
-}
-
-.col-1 {
-  width: 8.3333333%;
-}
-
-.off-12 {
-  margin-left: 100%;
-}
-
-.off-11 {
-  margin-left: 91.6666667%;
-}
-
-.off-10 {
-  margin-left: 83.3333333%;
-}
-
-.off-9 {
-  margin-left: 75%;
-}
-
-.off-8 {
-  margin-left: 66.6666667%;
-}
-
-.off-7 {
-  margin-left: 58.3333333%;
-}
-
-.off-6 {
-  margin-left: 50%;
-}
-
-.off-5 {
-  margin-left: 41.6666667%;
-}
-
-.off-4 {
-  margin-left: 33.3333333%;
-}
-
-.off-3 {
-  margin-left: 25%;
-}
-
-.off-2 {
-  margin-left: 16.6666667%;
-}
-
-.off-1 {
-  margin-left: 8.3333333%;
-}
-
-/**
- * Grid layout for small screens.
- */
-@include micro-screen {
-  .col-12, .col-11, .col-10, .col-9, .col-8, .col-7,
-  .col-6, .col-5, .col-4, .col-3, .col-2, .col-1 {
-    width: 100%;
-  }
-
-  .off-12, .off-11, .off-10, .off-9, .off-8, .off-7,
-  .off-6, .off-5, .off-4, .off-3, .off-2, .off-1 {
-    margin-left: 0;
+  // blog header hack to give it font sizing.
+  span {
+    @include resize-padding($nav-padding);
   }
 }
 
@@ -589,18 +40,212 @@ footer {
   height: 40vh;
 }
 
-.blog-header {
-  padding: 66px 0 0 0;
-  overflow: hidden;
-}
+h1, h2, h3, h4, h5, h6, p, a, small {
+  margin: 0;
+  padding: 0;
 
-.blog-list-item {
-  background-color: $site-secondary-color;
-}
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  
 
-// Fixes for html generated via markdown.
-.post {
-  h1, h2, h3, h4, h5, h6 {
-    padding: 0;
+  &.alt {
+    color: $accent-color;
   }
+}
+
+h1 {
+  padding: 20vh 0 0 0;
+  font-size: 4em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+i {
+  &:hover {
+    color: $accent-color;
+  }
+}
+
+a {
+  color: $accent-color;
+}
+
+small {
+  font-size: 0.8em;
+
+  a {
+    font-size: 1em;
+  }
+}
+
+nav {
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+  background-color: $accent-color;
+  display: flex;
+
+  a {
+    &:first-child {
+      flex: 1 1 auto;
+      display: flex;
+    }
+
+    @include resize-padding($nav-padding);
+    color: $text-color;
+    text-decoration: none;
+    cursor: pointer !important;
+  }
+}
+
+svg {
+  overflow: visible !important;
+}
+
+.arrow {
+  margin-top: 50px;
+  align-self: center;
+  border-right: $arrow-size solid transparent;
+  border-left: $arrow-size solid transparent;
+  border-top: $arrow-size solid $accent-color;
+  animation-duration: 3s;
+  animation-name: bounce;
+  animation-iteration-count: infinite;
+  
+  &.reversed {
+    animation-direction: reverse;
+    border-bottom: $arrow-size solid $accent-color;
+    border-top: unset;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    margin-top: $arrow-dist;
+  }
+
+  50% {
+    margin-top: $arrow-dist * 2;
+  }
+}
+
+.col {
+  display: flex;
+  flex: 1 1;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.content {
+  display: flex;
+  flex: 1 1;
+  flex-direction: column;
+  background-color: $primary-color;
+  @include resize-padding(round($content-padding/2));
+
+  &:nth-child(odd) {
+    background-color: $secondary-color;
+  }
+
+  .row {
+    .col {
+      &:first-child, &:nth-child(3) {
+        flex: 1 2;
+      }
+  
+      @include xs-screen {
+        min-width: fit-content;        
+      }
+      @include s-screen {
+        min-width: fit-content;        
+      }
+      @include m-screen {
+        min-width: fit-content;        
+      }
+
+      flex: 2 1;
+      justify-content: center;
+      @include resize-padding(round($content-padding/2));
+    }
+  }
+
+  &.blog {
+    width: 70vw;
+    align-self: center;
+  }
+
+  &.post {
+    @include resize-padding(round($content-padding/2), round($content-padding/2));
+    text-align: left;
+  }
+}
+
+.profile {
+  img {
+    border: $accent-color;
+    border-width: 7px;
+    // border-radius: 21px;
+    border-style: solid;
+    box-sizing: border-box;
+  
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    max-height: 500px;
+  }
+}
+
+.professional {
+  color: $text-color;
+}
+.personal {
+  color: $accent-color;
+}
+
+.ct-series-a {
+  .ct-point,
+  .ct-line {
+    stroke: $accent-color;
+  }
+  .ct-area {
+    fill-opacity: 1;
+    fill: adjust-color($accent-color, $alpha: -0.5);
+  }
+}
+
+.ct-series-b {
+  .ct-point,
+  .ct-line {
+    stroke: $text-color;
+  }
+  .ct-area {
+    fill-opacity: 1;
+    fill: adjust-color($text-color, $alpha: -0.5);
+  }
+}
+
+.ct-label {
+  &.ct-end {
+    -moz-transform: rotate(30deg) translateY($nav-padding * 1.5);
+    -webkit-transform: rotate(30deg) translateY($nav-padding * 1.5);
+    -o-transform: rotate(30deg) translateY($nav-padding * 1.5);
+    -ms-transform: rotate(30deg) translateY($nav-padding * 1.5);
+    transform: rotate(30deg) translateY($nav-padding * 1.5);
+  }
+}
+
+.center {
+  align-self: center;
+  text-align: center;
 }

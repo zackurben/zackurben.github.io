@@ -1,114 +1,99 @@
 ---
 layout: default
 ---
-  <div class="content" id="about">
-    <div class="row center">
-      <h2>About</h2>
+<div class="content" id="about">
+  <h2 class="center">About</h2>
+  <div class="row">
+    <div class="col">
+      <div class="profile">
+        <img class="" src="/img/zack.jpeg">
+      </div>
     </div>
-    <div class="row">
-      <div class="col-3">
-        <img class="profile" src="/img/zack.jpeg">
-      </div>
-      <div class="off-1 col-8">
-        I am a Computer Scientist located in Dallas, Texas, and a full stack M.E.A.N. developer at
-        Sony. I am interested in many things, but I focus on high performance web development, open source
-        projects, information security, and finance. I am <em><strong>passionate</strong></em> about programming
-        and creating elegant solutions that follow the UNIX Philosophy. Curious in nature and dedicated to
-        learning new things, I thrive on the backend of a web stack.
-      </div>
+    <div class="col">
+      <p>{{ site.bio }}</p>
     </div>
   </div>
-  <div class="content" id="skills">
-    <div class="row center">
-      <h2>Skills</h2>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <div class="row">
-          <div class="col-12 pull-left">
-            <div class="ct-legend pull-left">
-              <i class="fa fa-area-chart personal"></i>&nbsp;Personal<br>
-              <i class="fa fa-area-chart professional"></i>&nbsp;Professional
-            </div>
-          </div>
-        </div>
-        <div class="ct-chart ct-major-twelfth" width="auto" height="auto"></div>
+</div>
+<div class="content" id="skills">
+  <h2 class="center">Skills</h2>
+  <div class="row">
+    <div class="col">
+      <div>
+        <i class="fa fa-area-chart personal"></i>&nbsp;Personal
+      </div>
+      <div>
+        <i class="fa fa-area-chart professional"></i>&nbsp;Professional
       </div>
     </div>
-  </div>
-  <div class="content" id="projects">
-    <div class="row center">
-      <h2>Projects</h2>
+    <div class="col">
+      <div class="ct-chart ct-major-twelfth" width="auto" height="auto"></div>
     </div>
-    {% for project in site.projects %}
+  </div>
+</div>
+<div class="content" id="projects">
+  <h2 class="center">Projects*</h2>
+  {% for project in site.projects %}
+
+  <div class="row">
+    <div class="col">
+      <h3>{{ project.name }}</h3>
       <div class="row">
-        <div class="col-5">
-          <h2 class="thin left">{{ project.name }}</h2>
-          <div class="col-3 thin right">
-            <strong>Client:</strong>&nbsp;
-          </div>
-          <div class="col-9 thin left">
-            {{ project.client }}
-          </div>
-          <div class="col-3 thin right">
-            <strong>Project:</strong>&nbsp;
-          </div>
-          <div class="col-9 thin left">
-            {{ project.project }}
-          </div>
-          <div class="col-3 thin right">
-            <strong>Team:</strong>&nbsp;
-          </div>
-          <div class="col-9 thin left">
-            {% for user in project.team %}
-              {% if user.link == '#' %}
-                {{ user.name }}&nbsp;
-              {% else %}
-                <a href="{{ user.link }}" target="_blank">{{ user.name }}</a>&nbsp;
-              {% endif %}
-            {% endfor %}
-          </div>
-          <div class="col-3 thin right">
-            <strong>Link:</strong>&nbsp;
-          </div>
-          <div class="col-9 thin left">
-            {% for link in project.link %}
-              {% if link.link == '#' %}
-                {{ link.label }}&nbsp;
-              {% else %}
-                <a href="{{ link.link }}" target="_blank">{{ link.label }}</a>&nbsp;
-              {% endif %}
-            {% endfor %}
-          </div>
-          <div class="col-3 thin right">
-            <strong>Tech:</strong>&nbsp;
-          </div>
-          <div class="col-9 thin left">
-            {% for tech in project.tech %}
-              {% if tech.link == '#' %}
-                {{ tech.label }}&nbsp;
-              {% else %}
-                <a href="{{ tech.link }}" target="_blank">{{ tech.label }}</a>&nbsp;
-              {% endif %}
-            {% endfor %}
-          </div>
-        </div>
-        <div class="off-1 col-6">
-          {{ project.about }}
-        </div>
+          <strong>Client:</strong>&nbsp;{{ project.client }}  
       </div>
-    {% endfor %}
-  </div>
-  <div class="content" id="contact">
-    <div class="row center">
-      <h2>Contact</h2>
-    </div>
-    <div class="row">
-      <div class="col-12 center">
-        <a href="mailto:{{ site.email }}" target="_blank"><i class="fa fa-envelope-square fa-5x"></i></a>&nbsp;
-        <a href="{{ site.github_profile }}" target="_blank"><i class="fa fa-github-square fa-5x"></i></a>&nbsp;
-        <a href="{{ site.linkedin_profile }}" target="_blank"><i class="fa fa-linkedin-square fa-5x"></i></a>&nbsp;
-        <a href="{{ site.twitter_profile }}" target="_blank"><i class="fa fa-twitter-square fa-5x"></i></a>
+      <div class="row">
+          <strong>Project:</strong>&nbsp;{{ project.project }}
+      </div>
+      <div class="row">
+          <strong>Team:</strong>&nbsp;
+          {% for user in project.team %}
+            {% if user.link == '#' %}
+              {{ user.name }}&nbsp;
+            {% else %}
+              <a href="{{ user.link }}" target="_blank">{{ user.name }}</a>&nbsp;
+            {% endif %}
+          {% endfor %}
+      </div>
+      <div class="row">
+          <strong>Link:</strong>&nbsp;
+          {% for link in project.link %}
+            {% if link.link == '#' %}
+              {{ link.label }}&nbsp;
+            {% else %}
+              <a href="{{ link.link }}" target="_blank">{{ link.label }}</a>&nbsp;
+            {% endif %}
+          {% endfor %}
+      </div>
+      <div class="row">
+        <strong>Tech:</strong>&nbsp;
+        {% for tech in project.tech %}
+          {% if tech.link == '#' %}
+            {{ tech.label }}&nbsp;
+          {% else %}
+            <a href="{{ tech.link }}" target="_blank">{{ tech.label }}</a>&nbsp;
+          {% endif %}
+        {% endfor %}
       </div>
     </div>
+    <div class="col">
+      <p>{{ project.about }}</p>
+    </div>
   </div>
+
+  {% endfor %}
+
+  <div class="row">
+    <div class="col"></div>
+    <div class="col">
+      <small>* This is a small sample of some of my projects, please visit my <a href="{{site.github_profile}}">GitHub</a> the see my latest work.</small>
+    </div>
+  </div>
+</div>
+<div class="content" id="contact">
+  <h2 class="center">Contact</h2>
+  <div class="row center">
+    <a href="mailto:{{ site.email }}" target="_blank"><i class="fa fa-envelope-square fa-5x"></i></a>&nbsp;
+    <a href="{{ site.github_profile }}" target="_blank"><i class="fa fa-github-square fa-5x"></i></a>&nbsp;
+    <a href="{{ site.linkedin_profile }}" target="_blank"><i class="fa fa-linkedin-square fa-5x"></i></a>&nbsp;
+    <a href="{{ site.twitter_profile }}" target="_blank"><i class="fa fa-twitter-square fa-5x"></i></a>
+  </div>
+</div>
