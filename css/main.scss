@@ -21,25 +21,25 @@ $arrow-size: 50px;
 $arrow-dist: 50px;
 
 @mixin xs-screen {
-  @media only screen and (max-width : 480px) {
+  @media only screen and (min-width: 1px) and (max-width : 480px) {
     @content;
   }
 }
 
 @mixin s-screen {
-  @media only screen and (min-width : 768px) {
+  @media only screen and (min-width: 480px) and (max-width : 768px) {
     @content;
   }
 }
 
 @mixin m-screen {
-  @media only screen and (min-width: 1024px) {
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
     @content;
   }
 }
 
 @mixin l-screen {
-  @media only screen and (min-width: 1280px) {
+  @media only screen and (min-width: 1024px) {
     @content;
   }
 }

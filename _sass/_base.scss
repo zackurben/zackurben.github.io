@@ -167,6 +167,12 @@ svg {
       @include xs-screen {
         min-width: fit-content;        
       }
+      @include s-screen {
+        min-width: fit-content;        
+      }
+      @include m-screen {
+        min-width: fit-content;        
+      }
 
       flex: 2 1;
       justify-content: center;
@@ -180,20 +186,24 @@ svg {
   }
 
   &.post {
-    @include resize-padding(round($content-padding), round($content-padding));
+    @include resize-padding(round($content-padding/2), round($content-padding/2));
     text-align: left;
   }
 }
 
 .profile {
-  border: $accent-color;
-  border-width: 7px;
-  // border-radius: 21px;
-  border-style: solid;
-  box-sizing: border-box;
-
-  max-width: 100%;
-  height: auto;
+  img {
+    border: $accent-color;
+    border-width: 7px;
+    // border-radius: 21px;
+    border-style: solid;
+    box-sizing: border-box;
+  
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    max-height: 500px;
+  }
 }
 
 .professional {
