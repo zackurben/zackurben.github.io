@@ -1,7 +1,5 @@
 * {
   color: $text-color;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
   @include resize-font($text-body-size);
 }
 
@@ -40,10 +38,13 @@ footer {
   height: 40vh;
 }
 
-h1, h2, h3, h4, h5, h6, p {
-  text-align: center;
+h1, h2, h3, h4, h5, h6, p, a, small {
   margin: 0;
   padding: 0;
+
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  
 
   &.alt {
     color: $accent-color;
@@ -145,11 +146,6 @@ svg {
 }
 
 .content {
-  &.blog {
-    width: 70vw;
-    align-self: center;
-  }
-
   display: flex;
   flex: 1 1;
   flex-direction: column;
@@ -170,6 +166,16 @@ svg {
       padding: round($content-padding/4);
       justify-content: center;
     }
+  }
+
+  &.blog {
+    width: 70vw;
+    align-self: center;
+  }
+
+  &.post {
+    padding: round($content-padding * 1.5) round($content-padding * 2);
+    text-align: left;
   }
 }
 

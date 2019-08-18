@@ -4,7 +4,7 @@ layout: blog
 {% for post in paginator.posts %}
 <div class="content blog">
     <a href="{{ post.url }}" class="pull-left">{{ post.title }}</a><small class="pull-right blog-date">{{ post.displayDate || post.date }}</small>
-    {% if post.summary %}<br><small class="blog-summary">{{ post.summary }}</small><br>{% endif %}
+    {% if post.summary %}<br><small class="blog-summary">{{ post.summary }}</small>{% endif %}
 </div>
 {% endfor %}
 

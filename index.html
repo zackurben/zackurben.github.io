@@ -2,7 +2,7 @@
 layout: default
 ---
 <div class="content" id="about">
-  <h2>About</h2>
+  <h2 class="center">About</h2>
   <div class="row">
     <div class="col">
       <img class="profile" src="/img/zack.jpeg">
@@ -13,7 +13,7 @@ layout: default
   </div>
 </div>
 <div class="content" id="skills">
-  <h2>Skills</h2>
+  <h2 class="center">Skills</h2>
   <div class="row">
     <div class="col">
       <div>
@@ -29,7 +29,7 @@ layout: default
   </div>
 </div>
 <div class="content" id="projects">
-  <h2>Projects*</h2>
+  <h2 class="center">Projects*</h2>
   {% for project in site.projects %}
 
   <div class="row">
@@ -87,7 +87,7 @@ layout: default
   </div>
 </div>
 <div class="content" id="contact">
-  <h2>Contact</h2>
+  <h2 class="center">Contact</h2>
   <div class="row center">
     <a href="mailto:{{ site.email }}" target="_blank"><i class="fa fa-envelope-square fa-5x"></i></a>&nbsp;
     <a href="{{ site.github_profile }}" target="_blank"><i class="fa fa-github-square fa-5x"></i></a>&nbsp;
