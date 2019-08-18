@@ -4,7 +4,7 @@
 @charset "utf-8";
 
 // Colors
-$accent-color: #7396c5;
+$accent-color: #51bd9e;
 $primary-color: #ffffff;
 $secondary-color: #eeeeee;
 $text-color: #1d1d1d;
@@ -41,6 +41,40 @@ $arrow-dist: 50px;
 @mixin l-screen {
   @media only screen and (min-width: 1280px) {
     @content;
+  }
+}
+
+@mixin resize-padding($padding1, $padding2: null) {
+  @include xs-screen {
+    padding: round($padding1 * 0.25);
+
+    @if $padding2 != null {
+      padding: round($padding1 * 0.25) round($padding2 * 0.25);
+    }
+  }
+
+  @include s-screen {
+    padding: round($padding1 * 0.5);
+
+    @if $padding2 != null {
+      padding: round($padding1 * 0.5) round($padding2 * 0.5);
+    }
+  }
+
+  @include m-screen {
+    padding: round($padding1 * 0.75);
+
+    @if $padding2 != null {
+      padding: round($padding1 * 0.75) round($padding2 * 0.75);
+    }
+  }
+
+  @include l-screen {
+    padding: round($padding1);
+
+    @if $padding2 != null {
+      padding: round($padding1) round($padding2);
+    }
   }
 }
 

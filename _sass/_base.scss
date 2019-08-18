@@ -29,8 +29,10 @@ header {
   &:not(#top) {
     height: 100vh
   }
+
+  // blog header hack to give it font sizing.
   span {
-    padding: round($nav-padding * 0.9);
+    @include resize-padding($nav-padding);
   }
 }
 
@@ -95,7 +97,7 @@ nav {
       display: flex;
     }
 
-    padding: round($nav-padding * 0.9);
+    @include resize-padding($nav-padding);
     color: $text-color;
     text-decoration: none;
     cursor: pointer !important;
@@ -149,8 +151,8 @@ svg {
   display: flex;
   flex: 1 1;
   flex-direction: column;
-  padding: round($content-padding/2);
   background-color: $primary-color;
+  @include resize-padding(round($content-padding/2));
 
   &:nth-child(odd) {
     background-color: $secondary-color;
@@ -162,9 +164,13 @@ svg {
         flex: 1 2;
       }
   
+      @include xs-screen {
+        min-width: fit-content;        
+      }
+
       flex: 2 1;
-      padding: round($content-padding/4);
       justify-content: center;
+      @include resize-padding(round($content-padding/4));
     }
   }
 
@@ -174,7 +180,7 @@ svg {
   }
 
   &.post {
-    padding: round($content-padding * 1.5) round($content-padding * 2);
+    @include resize-padding(round($content-padding), round($content-padding));
     text-align: left;
   }
 }
@@ -186,7 +192,7 @@ svg {
   border-style: solid;
   box-sizing: border-box;
 
-  max-width: 20vw;
+  max-width: 100%;
   height: auto;
 }
 
@@ -232,9 +238,4 @@ svg {
 .center {
   align-self: center;
   text-align: center;
-}
-
-.blog-header {
-  padding: 66px 0 0 0;
-  overflow: hidden;
 }
