@@ -176,7 +176,7 @@ svg {
 
       flex: 2 1;
       justify-content: center;
-      @include resize-padding(round($content-padding/4));
+      @include resize-padding(round($content-padding/2));
     }
   }
 
