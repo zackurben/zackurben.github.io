@@ -20,6 +20,31 @@ github_profile: "https://github.com/zackurben"
 linkedin_profile: "https://www.linkedin.com/in/zackurben"
 
 projects:
+  - name: "Knights Quest"
+    client: "General Public"
+    project: "Web Application"
+    team:
+      - name: "Zack Urben"
+        link: "#"
+      - name: "Jon Darling"
+        link: "http://jmdarling.com/"
+    link:
+      - label: "GitHub"
+        link: "https://github.com/zjlabs/js13kgames2020-submission"
+      - label: "js13kgames"
+        link: "https://js13kgames.com/entries/knights-quest"
+    tech:
+      - label: "Node.js"
+        link: "http://nodejs.org/"
+      - label: "rollup"
+        link: "https://rollupjs.org/guide/en/"
+      - label: "socket.io"
+        link: "https://socket.io/docs/"
+    about: "Knights Quest is a game designed for <a href=\"https://js13kgames.com\">JS13kGames</a>. The final
+            submission can be found <a href=\"https://js13kgames.com/entries/knights-quest\">here</a>.
+            Knights Quest is a realtime online multiplayer game that allows players to engage in combat to
+            reclaim their legendary gear! This game won 3rd in the Server category!
+            The entire game source fits within 13k and is an open source project under the MIT license"
   - name: "Tube Masters"
     client: "General Public"
     project: "Web Application"
