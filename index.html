@@ -1,12 +1,13 @@
 ---
 layout: default
 ---
+
 <div class="content" id="about">
   <h2 class="center">About</h2>
   <div class="row">
     <div class="col">
       <div class="profile">
-        <img class="" src="/img/zack.jpeg">
+        <img class="" src="/img/zack.jpg" />
       </div>
     </div>
     <div class="col">
@@ -18,12 +19,8 @@ layout: default
   <h2 class="center">Skills</h2>
   <div class="row">
     <div class="col">
-      <div>
-        <i class="fa fa-area-chart personal"></i>&nbsp;Personal
-      </div>
-      <div>
-        <i class="fa fa-area-chart professional"></i>&nbsp;Professional
-      </div>
+      <div><i class="fa fa-area-chart personal"></i>&nbsp;Personal</div>
+      <div><i class="fa fa-area-chart professional"></i>&nbsp;Professional</div>
     </div>
     <div class="col">
       <div class="ct-chart ct-major-twelfth" width="auto" height="auto"></div>
@@ -37,41 +34,19 @@ layout: default
   <div class="row">
     <div class="col">
       <h3>{{ project.name }}</h3>
+      <div class="row"><strong>Client:</strong>&nbsp;{{ project.client }}</div>
+      <div class="row"><strong>Project:</strong>&nbsp;{{ project.project }}</div>
       <div class="row">
-          <strong>Client:</strong>&nbsp;{{ project.client }}  
+        <strong>Team:</strong>&nbsp; {% for user in project.team %} {% if user.link == '#' %} {{ user.name }}&nbsp; {%
+        else %} <a href="{{ user.link }}" target="_blank">{{ user.name }}</a>&nbsp; {% endif %} {% endfor %}
       </div>
       <div class="row">
-          <strong>Project:</strong>&nbsp;{{ project.project }}
+        <strong>Link:</strong>&nbsp; {% for link in project.link %} {% if link.link == '#' %} {{ link.label }}&nbsp; {%
+        else %} <a href="{{ link.link }}" target="_blank">{{ link.label }}</a>&nbsp; {% endif %} {% endfor %}
       </div>
       <div class="row">
-          <strong>Team:</strong>&nbsp;
-          {% for user in project.team %}
-            {% if user.link == '#' %}
-              {{ user.name }}&nbsp;
-            {% else %}
-              <a href="{{ user.link }}" target="_blank">{{ user.name }}</a>&nbsp;
-            {% endif %}
-          {% endfor %}
-      </div>
-      <div class="row">
-          <strong>Link:</strong>&nbsp;
-          {% for link in project.link %}
-            {% if link.link == '#' %}
-              {{ link.label }}&nbsp;
-            {% else %}
-              <a href="{{ link.link }}" target="_blank">{{ link.label }}</a>&nbsp;
-            {% endif %}
-          {% endfor %}
-      </div>
-      <div class="row">
-        <strong>Tech:</strong>&nbsp;
-        {% for tech in project.tech %}
-          {% if tech.link == '#' %}
-            {{ tech.label }}&nbsp;
-          {% else %}
-            <a href="{{ tech.link }}" target="_blank">{{ tech.label }}</a>&nbsp;
-          {% endif %}
-        {% endfor %}
+        <strong>Tech:</strong>&nbsp; {% for tech in project.tech %} {% if tech.link == '#' %} {{ tech.label }}&nbsp; {%
+        else %} <a href="{{ tech.link }}" target="_blank">{{ tech.label }}</a>&nbsp; {% endif %} {% endfor %}
       </div>
     </div>
     <div class="col">
@@ -84,7 +59,10 @@ layout: default
   <div class="row">
     <div class="col"></div>
     <div class="col">
-      <small>* This is a small sample of some of my projects, please visit my <a href="{{site.github_profile}}">GitHub</a> the see my latest work.</small>
+      <small
+        >* This is a small sample of some of my projects, please visit my
+        <a href="{{site.github_profile}}">GitHub</a> the see my latest work.</small
+      >
     </div>
   </div>
 </div>
