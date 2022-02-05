@@ -32,7 +32,7 @@ low-key doing it for myself. I think 1 month is a sufficient amount of time to
 make the simple games that I'm targeting and its a long enough cycle time for
 me to tinker with new concepts. You can follow along on the blog where I plan
 to write a little retro about each game and play all the games on my new
-[game portal](https://games.zackurben.com/).
+[games portal](https://games.zackurben.com/).
 
 <br>
 Let me know if you play any of the games or have any issues. As always, feel
