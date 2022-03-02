@@ -1,6 +1,6 @@
 ---
 title: 'Experimenting with games'
-displayDate: '2021-02-03'
+displayDate: '2022-02-03'
 summary: 'Playing with new tech'
 tags:
 ---
